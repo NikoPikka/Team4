@@ -24,12 +24,5 @@ const routes: Routes = [
   declarations: [TeamPage]
 })
 export class TeamPageModule {
-  team_name: any;
-
-  ngOnInit() {
-    this.team_name = "test";
-    console.log(this.team_name);
-  }
-
 }
 

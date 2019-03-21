@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team.page.scss'],
 })
 export class TeamPage implements OnInit {
+  team_name: string = "Testijoukkue"
 
   constructor() { }
 
