@@ -1,3 +1,29 @@
 <ion-app>
+  <ion-header>
+  </ion-header>
+
   <ion-router-outlet></ion-router-outlet>
+
+  <ion-footer>
+      <ion-toolbar>
+          <ion-row class="footer">
+              <ion-col>
+                  <ion-button expand="block" fill="clear" routerLink="/home">
+                      <ion-icon slot="icon-only" name="home"></ion-icon>
+                  </ion-button>
+              </ion-col>
+              <ion-col>
+                  <ion-button expand="block" fill="clear" routerLink="/leagues">
+                    Leagues
+                  </ion-button>
+              </ion-col>
+              <ion-col>
+                  <ion-button expand="block"  fill="clear" routerLink="/home">
+                      <ion-icon slot="icon-only" name="undo"></ion-icon>
+                  </ion-button>
+              </ion-col>
+          </ion-row>
+      </ion-toolbar>
+    </ion-footer>
+
 </ion-app>

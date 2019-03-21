@@ -10,7 +10,14 @@ import { LeaguePage } from './league.page';
 const routes: Routes = [
   {
     path: '',
-    component: LeaguePage
+    component: LeaguePage,
+    children: [
+     
+      { path: 'standings-tab', loadChildren: '../standings-tab/standings-tab.module#StandingsTabPageModule' },
+      { path: 'schedule-tab', loadChildren: '../schedule-tab/schedule-tab.module#ScheduleTabPageModule' },
+      { path: 'scores-tab', loadChildren: '../scores-tab/scores-tab.module#ScoresTabPageModule' }
+
+    ]
   }
 ];
 

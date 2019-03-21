@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-league',
   templateUrl: './league.page.html',
   styleUrls: ['./league.page.scss'],
 })
-export class LeaguePage implements OnInit {
+export class LeaguePage {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }
