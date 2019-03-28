@@ -20,22 +20,61 @@
     
       <ion-tab-bar>
     
-        <ion-tab-button tab="standings-tab">
+        <ion-tab-button (click)="scheduleTab()">
           <ion-icon name="calendar"></ion-icon>
           <ion-label>Schedule</ion-label>
         </ion-tab-button>
-        <ion-tab-button tab="schedule-tab">
+        <ion-tab-button (click)="scoresTab()">
           <ion-icon name="clipboard"></ion-icon>
           <ion-label>Scores</ion-label>
         </ion-tab-button>
-        <ion-tab-button tab="scores-tab">
+        <ion-tab-button (click)="rosterTab()">
           <ion-icon name="contacts"></ion-icon>
           <ion-label>Roster</ion-label>
         </ion-tab-button>
     
       </ion-tab-bar>
     
+    
+    <!--SCHEDULE-TAB-->
+    <div padding *ngIf=schedule>
+      <ion-header>
+        <ion-toolbar>
+            <ion-title>SCHEDULE</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      
+      <h3>SCHEDULE</h3>
+      <p>TESTII.</p>
+    </div>
 
-    <p padding>Tulevat ottelut,Tulokset, Pelaajat</p>
+
+
+    <!--SCORES-TAB-->
+    <div padding *ngIf=scores>
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>SCORES</ion-title>
+            </ion-toolbar>
+        </ion-header>
+          
+        <h3>Tulokset...</h3>
+        <p>Pistepistepiste...</p>
+    </div>
+
+
+
+    <!--ROSTER-TAB-->
+    <div padding *ngIf=roster>
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>ROSTER</ion-title>
+            </ion-toolbar>
+        </ion-header>
+          
+        <h3>Pelaajat jne...</h3>
+        <p>Pistepistepistepiste...</p>
+    </div>
+
 
 </ion-content>
