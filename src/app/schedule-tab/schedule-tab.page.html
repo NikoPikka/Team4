@@ -1,37 +1,42 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Schedule</ion-title>
+    <!-- <ion-buttons>
+      {{date}}
+      <button (click)="datePicker()">
+        <ion-icon name="calendar">
+        </ion-icon>
+      </button>
+    </ion-buttons> -->
+    
+    <!-- <ionic-calendar-date-picker (onSelect)="dateSelected($event)"></ionic-calendar-date-picker>	 -->
+    <ion-item>
+    <ion-label><ion-icon name="calendar"> 
+    </ion-icon></ion-label>
+    <ion-datetime display-format="MMM DD, YYYY "></ion-datetime>
+  </ion-item>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content >
+  
   <ion-grid>
     <ion-row>
-
       <ion-col>
-        <ion-list lines="none">
-          <ion-item  *ngFor="let team of team1s">
-            <ion-label class="cols">{{team}}</ion-label>
-          </ion-item>
-        </ion-list>
+        <div *ngFor="let team of homeTeam" class="cols">
+          {{team}}
+        </div>
       </ion-col>
-
       <ion-col>
-        <ion-list lines="none">
-          <ion-item *ngFor="let team of team2s">
-            <ion-label class="cols">{{team}}</ion-label>
-          </ion-item>
-        </ion-list>
+        <div *ngFor="let team of awayTeam" class="cols">
+          {{team}}
+        </div>
       </ion-col>
-
       <ion-col>
-        <ion-list lines="none">
-          <ion-item *ngFor="let score of scores" class="item">
-            <ion-label class="cols">{{score}}</ion-label>
-          </ion-item>
-        </ion-list>
+        <div *ngFor="let score of scores" class="cols">
+          {{score}}
+        </div>
       </ion-col>
-
     </ion-row>
   </ion-grid>
 </ion-content>

@@ -6,19 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedule-tab.page.scss'],
 })
 export class ScheduleTabPage implements OnInit {
-  team1s = [];
-  team2s = [];
+  homeTeam = [];
+  awayTeam = [];
   scores = [];
   constructor() {}
 
   ngOnInit() {
-    this.team1s = [
+
+    this.homeTeam = [
       "Everton",
       "Liverpool",
-      "Manchester United"
+      "ManU"
     ];
 
-    this.team2s = [
+    this.awayTeam = [
       "Burnley",
       "Brighton",
       "Arsenal"
@@ -30,5 +31,6 @@ export class ScheduleTabPage implements OnInit {
       "2 - 2"
     ];
   }
-    
+
+
 }
