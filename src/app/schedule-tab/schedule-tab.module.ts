@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { DatePickerModule } from 'ionic4-date-picker';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -20,7 +19,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    DatePickerModule,
     RouterModule.forChild(routes)
   ],
   declarations: [ScheduleTabPage]
