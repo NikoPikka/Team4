@@ -1,15 +1,6 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Schedule</ion-title>
-    <!-- <ion-buttons>
-      {{date}}
-      <button (click)="datePicker()">
-        <ion-icon name="calendar">
-        </ion-icon>
-      </button>
-    </ion-buttons> -->
-    
-    <!-- <ionic-calendar-date-picker (onSelect)="dateSelected($event)"></ionic-calendar-date-picker>	 -->
     <ion-item>
     <ion-label><ion-icon name="calendar"> 
     </ion-icon></ion-label>
@@ -31,11 +22,6 @@
       <ion-col>
         <div *ngFor="let team of awayTeam" class="cols">
           {{team}}
-        </div>
-      </ion-col>
-      <ion-col>
-        <div *ngFor="let score of scores" class="cols">
-          {{score}}
         </div>
       </ion-col>
     </ion-row>

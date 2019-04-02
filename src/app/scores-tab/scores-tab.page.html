@@ -1,9 +1,35 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Scores</ion-title>
+    <ion-item>
+      <ion-label><ion-icon name="calendar"> 
+      </ion-icon></ion-label>
+      <ion-datetime display-format="MMM DD, YYYY " [(ngModel)]="myDate">
+      </ion-datetime>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div *ngFor="let team of homeTeam" class="cols">
+          {{team}}
+        </div>
+      </ion-col>
+      <ion-col>
+        <div *ngFor="let team of awayTeam" class="cols">
+          {{team}}
+        </div>
+      </ion-col>
+       <ion-col>
+        <div *ngFor="let score of scores" class="cols">
+          {{score}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
