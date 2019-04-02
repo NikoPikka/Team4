@@ -9,6 +9,8 @@ export class ScheduleTabPage implements OnInit {
   homeTeam = [];
   awayTeam = [];
   scores = [];
+  myDate: String = new Date().toISOString();
+
   constructor() {}
 
   ngOnInit() {
