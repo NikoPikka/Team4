@@ -1,21 +1,178 @@
+//galaxy S5
+@media only screen and (orientation: portrait) and (max-height: 641px) {
 button {
     margin-top: 2%;
     background-color: transparent;
     margin-right: 1%;
     margin-left: 1%;
-  //border: 2px solid lightgray;
-  //border-bottom: 10px solid lightgrey;
-    width: auto;
-    height: auto;
     max-width: 30%;
     max-height: 30%;
-    
-    
-    
 }
+  p {
+    font-size: 3vw;
+  }
+}
+@media only screen and (orientation: landscape) and (max-width: 641px) {
+  button {
+      margin-top: 2%;
+      background-color: transparent;
+      margin-right: 1%;
+      margin-left: 1%;
+      max-width: 30%;
+      max-height: 30%;
+      margin-bottom: 20%;
+  }
+    p {
+      font-size: 3vw;
+    }
+  }
+  //pixel 2
+@media only screen and (orientation: portrait) and (min-height: 642px) and (max-height: 732px) {
+  button {
+      margin-top: 2%;
+      background-color: transparent;
+      margin-right: 1%;
+      margin-left: 1%;
+      max-width: 30%;
+      max-height: 30%;
+  }
+    p {
+      font-size: 3vw;
+    }
+  }
+  @media only screen and (orientation: landscape) and (min-width: 642px) and (max-width: 732px) {
+    button {
+        margin-top: 2%;
+        background-color: transparent;
+        margin-right: 1%;
+        margin-left: 1%;
+        max-width: 30%;
+        max-height: 30%;
+        margin-bottom: 22%;
+    }
+      p {
+        font-size: 3vw;
+      }
+    }
 
-img {
+      //pixel 2 XL and iphones
+@media only screen and (orientation: portrait) and (min-height: 733px) and (max-height: 824px) {
+  button {
+      margin-top: 2%;
+      background-color: transparent;
+      margin-right: 1%;
+      margin-left: 1%;
+      max-width: 30%;
+      max-height: 30%;
+  }
+    p {
+      font-size: 3vw;
+    }
+  }
+  @media only screen and (orientation: landscape) and (min-width: 733px) and (max-width: 824px) {
+    button {
+        margin-top: 2%;
+        background-color: transparent;
+        margin-right: 1%;
+        margin-left: 1%;
+        max-width: 30%;
+        max-height: 30%;
+        margin-bottom: 22%;
+        margin-bottom: 22%;
+    }
+      p {
+        font-size: 3vw;
+      }
+    }
     
-    
-}       
-    
+//ipad
+@media only screen and (orientation: portrait) and (min-height: 825px) and (max-height: 1024px) {
+  button {
+      margin-top: 2%;
+      background-color: transparent;
+      margin-right: 1%;
+      margin-left: 1%;
+      max-width: 30%;
+      max-height: 30%;
+      margin-bottom: 1%;
+  }
+    p {
+      font-size: 3vw;
+    }
+  }
+
+  @media only screen and (orientation: landscape) and (min-width: 825px)  and (max-width: 1024px) {
+    button {
+        margin-top: 2%;
+        background-color: transparent;
+        margin-right: 1%;
+        margin-left: 1%;
+        max-width: 30%;
+        max-height: 30%;
+        margin-bottom: 12%;
+    }
+      p {
+        font-size: 3vw;
+      }
+    }
+
+    //ipad-pro
+@media only screen and (orientation: portrait) and (min-height: 1025px) and (max-height: 1367px) {
+  button {
+      margin-top: 2%;
+      background-color: transparent;
+      margin-right: 1%;
+      margin-left: 1%;
+      max-width: 30%;
+      max-height: 30%;
+      margin-bottom: 1%;
+  }
+    p {
+      font-size: 3vw;
+    }
+  }
+
+  @media only screen and (orientation: landscape) and (min-width: 1025px) and (max-width: 1367px) {
+    button {
+        margin-top: 2%;
+        background-color: transparent;
+        margin-right: 1%;
+        margin-left: 1%;
+        max-width: 30%;
+        max-height: 30%;
+        margin-bottom: 8%;
+    }
+      p {
+        font-size: 3vw;
+      }
+    }
+
+  //anything above
+  @media only screen and (orientation: landscape) and (min-width: 1368px) and (max-width: 1920px) {
+    button {
+        margin-top: 2%;
+        background-color: transparent;
+        margin-right: 1%;
+        margin-left: 1%;
+        max-width: 30%;
+        max-height: 30%;
+        margin-bottom: 5%;
+    }
+    p {
+      font-size: 1vw;
+    }
+  }
+  @media only screen and (orientation: landscape) and (min-width: 1368px) and (max-height: 1920px) {
+    button {
+        margin-top: 2%;
+        background-color: transparent;
+        margin-right: 1%;
+        margin-left: 1%;
+        max-width: 30%;
+        max-height: 30%;
+        margin-bottom: 8%;
+    }
+    p {
+      font-size: 1.5vw;
+    }
+  }
