@@ -14,11 +14,14 @@
     background-color: #000000;
 }
 
-.team-header {
-    background-color: #e4eae3;
+.header-title {
+    color: #ffffff;
 }
-.team_title {
-    text-align: right;
-    margin-top: 0;
-    padding-top: 0;
+
+ion-content {
+    padding-bottom: 200px;
+}
+
+ion-button {
+    text-transform: uppercase;
 }

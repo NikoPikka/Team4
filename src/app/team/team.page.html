@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="dark">
-    <ion-title>Team {{team_name}}</ion-title>
+  <ion-toolbar color="black">
+    <ion-title class="header-title">Team {{team_name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,6 +17,76 @@
       </ion-row>
     </ion-grid>
 
-    <p padding>Tulevat ottelut,Tulokset, Pelaajat</p>
+    
+      <ion-tab-bar>
+    
+        <ion-tab-button (click)="scheduleTab()" [ngStyle]="schedule && {'background-color':'#ffffff','border-color': '#ffffff'}">
+          <ion-icon name="calendar"></ion-icon>
+          <ion-label>Schedule</ion-label>
+        </ion-tab-button>
+        <ion-tab-button (click)="scoresTab()" [ngStyle]="scores && {'background-color':'#ffffff','border-color': '#ffffff'}">
+          <ion-icon name="clipboard"></ion-icon>
+          <ion-label>Scores</ion-label>
+        </ion-tab-button>
+        <ion-tab-button (click)="rosterTab()" [ngStyle]="roster && {'background-color':'#ffffff','border-color': '#ffffff'}">
+          <ion-icon name="contacts"></ion-icon>
+          <ion-label>Roster</ion-label>
+        </ion-tab-button>
+    
+      </ion-tab-bar>
+    
+    
+    <!--SCHEDULE-TAB-->
+    <div *ngIf=schedule>
+
+      <ion-header>
+        <ion-toolbar>
+            <ion-title>SCHEDULE</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      
+      <div class="tab-contain">
+        <h3>Lukkari...</h3>
+        <p>No eiku se otteluohjelma...</p>
+      </div>
+
+    </div>
+
+
+
+    <!--SCORES-TAB-->
+    <div *ngIf=scores>
+
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>SCORES</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        
+        <div class="tab-contain">
+          <h3>Tulokset...</h3>
+          <p>Pistepistepiste...</p>
+        </div>
+
+    </div>
+
+
+
+    <!--ROSTER-TAB-->
+    <div *ngIf=roster>
+
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>ROSTER</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <div class="tab-contain">
+          <h3>Pelaajat jne...</h3>
+          <p>Pistepistepistepiste...</p>
+        </div>
+
+    </div>
+
 
 </ion-content>
