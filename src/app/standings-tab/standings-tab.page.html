@@ -6,6 +6,31 @@
 
 <ion-content padding>
 
-  
+  <table class="GeneratedTable" >
+    <thead>
+      <tr>
+        <th>Team</th>
+        <th>G</th>
+        <th>W</th>
+        <th>D</th>
+        <th>L</th>
+        <th>GD</th>
+        <th>P</th>
+      </tr>
+    </thead>
 
+    <tbody >
+
+      <tr *ngFor="let team of teams" class="row">
+        <td >{{team}}</td>
+      </tr>
+
+      <tr *ngFor="let game of games" class="row">
+          <td >{{game}}</td>
+      </tr>
+
+    
+    </tbody>
+  </table>
+  
 </ion-content>

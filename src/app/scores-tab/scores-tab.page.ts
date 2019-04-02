@@ -19,8 +19,7 @@ export class ScoresTabPage implements OnInit {
     this.homeTeam = [
       "Everton",
       "Liverpool",
-      "ManU",
-      "ManC"
+      "ManU"
     ];
 
     this.awayTeam = [
