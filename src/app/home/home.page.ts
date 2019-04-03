@@ -17,7 +17,6 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-
     // testing..................................
     this.footballService
     .getData('/matches/'+ this.test)

@@ -1,9 +1,11 @@
+$bg: #ffffff;
+
 ion-content {
-    background-color: #e4eae3;
+    background-color: $bg;
 }
 
 ion-tab-button {
-    background-color: #e4eae3;
+    background-color: $bg;
     border-radius: 0px 0px 10px 10px;
     border-bottom: 2px solid #000000;
     border-top: 0.5px solid #ffffff;
@@ -11,15 +13,42 @@ ion-tab-button {
 }
 
 .team-header {
-    background-color: #e4eae3;
+    background-color: #ffffff;
     color: #000000;
+    min-height: 120px;
 }
 .team_title {
-    text-align: right;
+    text-align: left;
     margin-top: 0;
     padding-top: 0;
 }
 
 .tab-contain {
     padding: 5%;
+    background-color: #ffed00;
+    background-image: url('/../assets/img/grass.jpg');
+    background-size: contain;
+    padding-bottom: 100%;
 }
+
+.tab-block {
+    background-color: $bg;
+    padding: 2%;
+    margin-top: 0;
+    opacity: 0.9;
+}
+
+ion-tab-bar {
+    background-color: #ffed00;
+    background-image: url('/../assets/img/grass.jpg');
+    background-size: contain;
+}
+
+.team_logo {
+    max-height: 130px;
+    float: right;
+    position: absolute;
+    top: -15%;
+    right: 10%;
+}
+

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FootballService } from '../football.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-team',
@@ -6,14 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team.page.scss'],
 })
 export class TeamPage implements OnInit {
+
   team_name: string = "Testijoukkue"
+
   schedule: boolean = false;
   scores: boolean = false;
   roster: boolean = false;
 
-  constructor() { }
+  team_id: string = '12';
+  team: any;
+
+  constructor(private footballService: FootballService, private router: Router) { }
 
   ngOnInit() {
+      this.footballService
+      .getData('/teams/'+ this.team_id)
+      .subscribe(data => {
+        this.team = data;
+        console.log(this.team);
+      })
   }
 
   scheduleTab() {

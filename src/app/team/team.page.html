@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="black">
-    <ion-title class="header-title">Team {{team_name}}</ion-title>
+    <ion-title class="header-title">{{team?.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,11 +8,11 @@
     <ion-grid class="team-header">
       <ion-row>
           <ion-col>
-            <img src="..\assets\img\testilogo.png">
+            <h2 class="team_title">{{team?.name}}</h2>
+            <a class="team_title" target="_blank" href={{team?.website}}>{{team?.website}}</a>
           </ion-col>
           <ion-col>
-            <h2 class="team_title">{{team_name}}</h2>
-            <p class="team_title">Some Little info?</p>
+            <img class="team_logo" src={{team?.crestUrl}}>
           </ion-col>
       </ion-row>
     </ion-grid>
@@ -20,15 +20,15 @@
     
       <ion-tab-bar>
     
-        <ion-tab-button (click)="scheduleTab()" [ngStyle]="schedule && {'background-color':'#ffffff','border-color': '#ffffff'}">
+        <ion-tab-button (click)="scheduleTab()" [ngStyle]="schedule && {'background-image': 'url(/../assets/img/grass.jpg)', 'background-size': 'cover', 'border-color': '#ffffff', 'opacity': '0.5'}">
           <ion-icon name="calendar"></ion-icon>
           <ion-label>Schedule</ion-label>
         </ion-tab-button>
-        <ion-tab-button (click)="scoresTab()" [ngStyle]="scores && {'background-color':'#ffffff','border-color': '#ffffff'}">
+        <ion-tab-button (click)="scoresTab()" [ngStyle]="scores && {'background-image': 'url(/../assets/img/grass.jpg)', 'background-size': 'cover', 'border-color': '#ffffff'}">
           <ion-icon name="clipboard"></ion-icon>
           <ion-label>Scores</ion-label>
         </ion-tab-button>
-        <ion-tab-button (click)="rosterTab()" [ngStyle]="roster && {'background-color':'#ffffff','border-color': '#ffffff'}">
+        <ion-tab-button (click)="rosterTab()" [ngStyle]="roster && {'background-image': 'url(/../assets/img/grass.jpg)', 'background-size': 'cover', 'border-color': '#ffffff'}">
           <ion-icon name="contacts"></ion-icon>
           <ion-label>Roster</ion-label>
         </ion-tab-button>
@@ -38,16 +38,12 @@
     
     <!--SCHEDULE-TAB-->
     <div *ngIf=schedule>
-
-      <ion-header>
-        <ion-toolbar>
-            <ion-title>SCHEDULE</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      
+  
       <div class="tab-contain">
-        <h3>Lukkari...</h3>
-        <p>No eiku se otteluohjelma...</p>
+        <div class="tab-block">
+          <h3>Lukkari...</h3>
+          <p>No eiku se otteluohjelma...</p>
+        </div>
       </div>
 
     </div>
@@ -56,12 +52,6 @@
 
     <!--SCORES-TAB-->
     <div *ngIf=scores>
-
-        <ion-header>
-            <ion-toolbar>
-                <ion-title>SCORES</ion-title>
-            </ion-toolbar>
-        </ion-header>
         
         <div class="tab-contain">
           <h3>Tulokset...</h3>
@@ -74,12 +64,6 @@
 
     <!--ROSTER-TAB-->
     <div *ngIf=roster>
-
-        <ion-header>
-            <ion-toolbar>
-                <ion-title>ROSTER</ion-title>
-            </ion-toolbar>
-        </ion-header>
 
         <div class="tab-contain">
           <h3>Pelaajat jne...</h3>
