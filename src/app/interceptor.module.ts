@@ -2,12 +2,15 @@ import { Injectable, NgModule} from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse} from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { environment } from '../environments/environment';
+
+const API_KEY = environment.apiKey;
 
 @Injectable()
 
 export class HttpsRequestInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const dupReq = req.clone({ headers: req.headers.set('X-Auth-Token', '465aa38216ff481094105918779ccebc') });
+    const dupReq = req.clone({ headers: req.headers.set('X-Auth-Token', API_KEY) });
     return next.handle(dupReq);
   }
 };

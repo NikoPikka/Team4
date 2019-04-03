@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const API_URL = environment.apiUrl;
-const API_KEY = environment.apiKey;
+//const API_KEY = environment.apiKey;
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +15,7 @@ export class FootballService {
    }
 
   getData(url): Observable<any> {
-    var address = 'http://api.football-data.org/v2/competitions/';
-    console.log(address);
-    return this.http.get(address);
+    return this.http.get(API_URL + url);
   }
 
 

@@ -11,20 +11,16 @@ import { Router } from '@angular/router';
 export class HomePage implements OnInit {
   
   items: any;
+  test: string = '204950';
 
   constructor( private footballService: FootballService, private router: Router) {
   }
 
   ngOnInit() {
-    console.log(Headers);
-    console.log('ngOnInit... works');
 
-    //let headers = new Headers();
-    //headers.append('X-Auth-Token', '465aa38216ff481094105918779ccebc');
-
-
+    // testing..................................
     this.footballService
-    .getData('')
+    .getData('/matches/'+ this.test)
     .subscribe(data => {
       console.log(data);
       this.items = data;
