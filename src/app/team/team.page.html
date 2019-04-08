@@ -50,11 +50,20 @@
               </ion-datetime>
           </ion-item>
 
-          <h3>Lukkari...</h3>
-
-          <div *ngFor="let match of matches">
-              <p> {{match?.id}} </p>
-          </div>
+          <ion-grid *ngFor="let match of matches">
+            <ion-row class="schedule_row">
+              <ion-col>
+                <div>
+                  {{match?.utcDate.substring(0, 10)}}
+                </div>
+              </ion-col>
+              <ion-col size="9">
+                <div>
+                  {{match?.homeTeam.name}} VS {{match?.awayTeam.name}}
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
 
           <p>No eiku se otteluohjelmaaa...{{myDate}}</p>
         </div>
