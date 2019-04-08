@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ScheduleTabPage implements OnInit {
   teams = [];
-  myDate: string = new Date().toISOString();
+  myDate: string = new Date().toISOString().substr(0, 10);
   competition_id: string="2021";
   competition: any;
 
@@ -17,6 +17,7 @@ export class ScheduleTabPage implements OnInit {
 
   ngOnInit() {
     this.getGames()
+    
   }
   getGames(){
     var x = 0;
@@ -25,12 +26,24 @@ export class ScheduleTabPage implements OnInit {
     .subscribe(data => {
       this.competition = data;
       for(let items of this.competition.matches){
-        this.teams[x] = items;
+        var gameDay = items.utcDate.substr(0, 10);
+        if(items.status == "SCHEDULED" && this.myDate == gameDay){
+          this.teams[x] = items;
           x++;
-        } 
-      console.log(this.teams[30]);
+          console.log(items.season.currentMatchday);
+        }
+         
+      }    
+      console.log(this.myDate);
+      console.log(gameDay);
+      console.log();
     })
-    
+
+  }
+
+  nextGames(){
+
+
   }
 
 }
