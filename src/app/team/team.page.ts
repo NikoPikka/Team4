@@ -17,17 +17,51 @@ export class TeamPage implements OnInit {
 
   team_id: string = '19';
   team: any;
-  myDate: String = new Date().toISOString();
+  allMatches: any;
+  matches: [];
+  myDate: String = '2019-04-06'; //new Date().toISOString().substring(0, 10);
+
+  matchDate: boolean = false;
+
+  players: [];
 
   constructor(private footballService: FootballService, private router: Router) { }
 
   ngOnInit() {
-      this.footballService
-      .getData('/teams/'+ this.team_id)
-      .subscribe(data => {
-        this.team = data;
-        console.log(this.team);
-      })
+    this.TeamInfo();
+    this.TeamMatches();
+
+  }
+
+  TeamInfo() {
+    this.footballService
+    .getData('/teams/'+ this.team_id)
+    .subscribe(data => {
+      this.team = data;
+      this.players= this.team.squad;
+      console.log(this.team);
+    })
+  }
+
+  TeamMatches() {
+    this.footballService
+    .getData('/teams/'+ this.team_id + '/matches/')
+    .subscribe(data => {
+      this.allMatches = data;
+      this.matches= this.allMatches.matches;
+
+
+    for (let match of this.matches) {   
+      var test = match.utcDate; 
+      if (test.includes(this.myDate)) {
+        this.matchDate = true;
+        console.log(match.utcDate);
+      }
+
+    }
+
+      console.log(this.matches);
+    })
   }
 
   scheduleTab() {

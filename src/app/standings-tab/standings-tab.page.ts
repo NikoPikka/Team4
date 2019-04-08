@@ -17,8 +17,11 @@ export class StandingsTabPage implements OnInit {
 
   ngOnInit() {
 
-  this.getTeams();
-  
+    this.getTeams()
+
+    this.teams = []
+
+  console.log(this.teams);
   }
   
 getTeams(){

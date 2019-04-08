@@ -65,6 +65,10 @@
     <p>Europa league</p>
   </button>
   <br>
+        <button *ngFor="let league of leagues.competitions" block routerLink="/league/" routerDirection="root">
+          <img src="..\assets\img\{{league?.name}}.png">
+          <p>{{league?.name}} </p>
+        </button>
   <br>
   <br>
   <br>
