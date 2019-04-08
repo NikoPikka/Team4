@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FootballService } from '../football.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-schedule-tab',
@@ -6,33 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schedule-tab.page.scss'],
 })
 export class ScheduleTabPage implements OnInit {
-  homeTeam = [];
-  awayTeam = [];
-  scores = [];
-  myDate: String = new Date().toISOString();
+  teams = [];
+  myDate: string = new Date().toISOString();
+  competition_id: string="2021";
+  competition: any;
 
-  constructor() {}
+  constructor(private footballService: FootballService, private router: Router) {}
 
   ngOnInit() {
-
-    this.homeTeam = [
-      "Everton",
-      "Liverpool",
-      "ManU"
-    ];
-
-    this.awayTeam = [
-      "Burnley",
-      "Brighton",
-      "Arsenal"
-    ];
-
-    this.scores = [
-      "0 - 0",
-      "1 - 1",
-      "2 - 2"
-    ];
+    this.getGames()
   }
-
+  getGames(){
+    var x = 0;
+    this.footballService
+    .getData('/competitions/'+ this.competition_id + '/matches')
+    .subscribe(data => {
+      this.competition = data;
+      for(let items of this.competition.matches){
+        this.teams[x] = items;
+          x++;
+        } 
+      console.log(this.teams[30]);
+    })
+    
+  }
 
 }

@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <button  block routerLink="/league" routerDirection="root">
+  <button  block routerLink="/league" routerDirection="root" >
     <img src="..\assets\img\CL_logo.png">
     <p>Champions-L</p>
   </button>
@@ -20,7 +20,7 @@
     <p>Liga Nos</p>
   </button>
   
-  <button  block>
+  <button  block (click)="getLeague(2021)" >
     <img src="..\assets\img\PL_logo.png">
     <p>Premier League</p>
   </button>

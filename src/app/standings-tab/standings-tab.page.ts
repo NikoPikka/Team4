@@ -17,24 +17,27 @@ export class StandingsTabPage implements OnInit {
 
   ngOnInit() {
 
-    this.teams = []
-
-  console.log(this.teams);
+  this.getTeams();
+  
   }
   
 getTeams(){
+  var x = 0;
   this.footballService
     .getData('/competitions/'+ this.competition_id + '/standings')
     .subscribe(data => {
       this.competition = data;
-      for(let teams of this.competition.standings){
-        for(let team_name of teams.table){
-          
-          console.log("Tiimii " + team_name.team.name);
-        }
-        
+      for(let items of this.competition.standings){
+        if(items.type == "TOTAL"){
+        for(let team_name of items.table){
+          this.teams[x] = team_name;
+          x++;
+         }
+        } 
       }
     })
+
+  
     
 }
 
