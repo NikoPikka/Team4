@@ -23,6 +23,7 @@ export class TeamPage implements OnInit {
 
   matchDate: boolean = false;
 
+
   players: [];
 
   constructor(private footballService: FootballService, private router: Router) { }
@@ -51,14 +52,14 @@ export class TeamPage implements OnInit {
       this.matches= this.allMatches.matches;
 
 
-    for (let match of this.matches) {   
+    /*for (let match of this.matches) {   
       var test = match.utcDate; 
       if (test.includes(this.myDate)) {
         this.matchDate = true;
         console.log(match.utcDate);
       }
 
-    }
+    }*/
 
       console.log(this.matches);
     })
