@@ -20,15 +20,15 @@
     
       <ion-tab-bar>
     
-        <ion-tab-button (click)="scheduleTab()" [ngStyle]="schedule && {'background-image': 'url(/../assets/img/grass.jpg)', 'background-size': 'cover', 'border-color': '#ffffff', 'opacity': '0.5'}">
+        <ion-tab-button (click)="scheduleTab()" [ngStyle]="schedule && {'border-color': '#ffffff', 'border-radius': '0px'}">
           <ion-icon name="calendar"></ion-icon>
           <ion-label>Schedule</ion-label>
         </ion-tab-button>
-        <ion-tab-button (click)="scoresTab()" [ngStyle]="scores && {'background-image': 'url(/../assets/img/grass.jpg)', 'background-size': 'cover', 'border-color': '#ffffff'}">
+        <ion-tab-button (click)="scoresTab()" [ngStyle]="scores && {'border-color': '#ffffff', 'border-radius': '0px'}">
           <ion-icon name="clipboard"></ion-icon>
           <ion-label>Scores</ion-label>
         </ion-tab-button>
-        <ion-tab-button (click)="rosterTab()" [ngStyle]="roster && {'background-image': 'url(/../assets/img/grass.jpg)', 'background-size': 'cover', 'border-color': '#ffffff'}">
+        <ion-tab-button (click)="rosterTab()" [ngStyle]="roster && {'border-color': '#ffffff', 'border-radius': '0px'}">
           <ion-icon name="contacts"></ion-icon>
           <ion-label>Roster</ion-label>
         </ion-tab-button>
@@ -38,10 +38,19 @@
     
     <!--SCHEDULE-TAB-->
     <div *ngIf=schedule>
-  
+      <ion-item>
+          <ion-label>
+            <ion-icon name="calendar"> </ion-icon>
+          </ion-label>
+          <ion-datetime display-format="MMM DD, YYYY " [(ngModel)]="myDate">
+          </ion-datetime>
+      </ion-item>
+
       <div class="tab-contain">
         <div class="tab-block">
+
           <h3>Lukkari...</h3>
+
           <p>No eiku se otteluohjelma...</p>
         </div>
       </div>

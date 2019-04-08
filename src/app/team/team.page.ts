@@ -15,8 +15,9 @@ export class TeamPage implements OnInit {
   scores: boolean = false;
   roster: boolean = false;
 
-  team_id: string = '12';
+  team_id: string = '19';
   team: any;
+  myDate: String = new Date().toISOString();
 
   constructor(private footballService: FootballService, private router: Router) { }
 
