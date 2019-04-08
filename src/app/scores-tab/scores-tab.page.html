@@ -1,6 +1,5 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Scores</ion-title>
     <ion-item>
       <ion-label><ion-icon name="calendar"> 
       </ion-icon></ion-label>
@@ -15,18 +14,18 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <div *ngFor="let team of homeTeam" class="cols">
-          {{team}}
+        <div *ngFor="let team of items" class="cols">
+          {{team.homeTeam.name}}
         </div>
       </ion-col>
       <ion-col>
-        <div *ngFor="let team of awayTeam" class="cols">
-          {{team}}
+        <div *ngFor="let team of items" class="cols">
+          {{team.awayTeam.name}}
         </div>
       </ion-col>
        <ion-col>
         <div *ngFor="let score of scores" class="cols">
-          {{score}}
+          {{score.fullTime.homeTeam}} - {{score.fullTime.awayTeam}}
         </div>
       </ion-col>
     </ion-row>
