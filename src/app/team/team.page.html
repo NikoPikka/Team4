@@ -38,20 +38,25 @@
     
     <!--SCHEDULE-TAB-->
     <div *ngIf=schedule>
-      <ion-item>
-          <ion-label>
-            <ion-icon name="calendar"> </ion-icon>
-          </ion-label>
-          <ion-datetime display-format="MMM DD, YYYY " [(ngModel)]="myDate">
-          </ion-datetime>
-      </ion-item>
 
       <div class="tab-contain">
         <div class="tab-block">
 
+          <ion-item>
+              <ion-label>
+                <ion-icon name="calendar"> </ion-icon>
+              </ion-label>
+              <ion-datetime display-format="MMM DD, YYYY " [(ngModel)]="myDate">
+              </ion-datetime>
+          </ion-item>
+
           <h3>Lukkari...</h3>
 
-          <p>No eiku se otteluohjelma...</p>
+          <div *ngFor="let match of matches">
+              <p> {{match?.id}} </p>
+          </div>
+
+          <p>No eiku se otteluohjelmaaa...{{myDate}}</p>
         </div>
       </div>
 
@@ -62,10 +67,22 @@
     <!--SCORES-TAB-->
     <div *ngIf=scores>
         
-        <div class="tab-contain">
-          <h3>Tulokset...</h3>
-          <p>Pistepistepiste...</p>
+      <div class="tab-contain">
+        <div class="tab-block">
+          
+          <ion-item>
+              <ion-label>
+                <ion-icon name="calendar"> </ion-icon>
+              </ion-label>
+              <ion-datetime display-format="MMM DD, YYYY " [(ngModel)]="myDate">
+              </ion-datetime>
+          </ion-item>
+
+          <h3>Lukkari...</h3>
+
+          <p>No eiku se otteluohjelma...{{myDate}}</p>
         </div>
+      </div>
 
     </div>
 
@@ -75,9 +92,17 @@
     <div *ngIf=roster>
 
         <div class="tab-contain">
-          <h3>Pelaajat jne...</h3>
-          <p>Pistepistepistepiste...</p>
-        </div>
+            <div class="tab-block">
+    
+              <h3>Roster</h3>
+    
+              <div *ngFor="let player of players">
+                  <p>{{player.name}}</p>
+                  <p>Position: {{player.position}}</p>
+              </div>
+
+            </div>
+          </div>
 
     </div>
 
