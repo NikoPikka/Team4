@@ -9,13 +9,11 @@ import { Router } from '@angular/router';
 })
 export class TeamPage implements OnInit {
 
-  team_name: string = "Testijoukkue"
-
   schedule: boolean = false;
   scores: boolean = false;
   roster: boolean = false;
 
-  team_id: string = '19';
+  team_id: string = '12';
   team: any;
   allMatches: any;
   matches: any[];
