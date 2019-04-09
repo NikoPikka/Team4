@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FootballService } from '../football.service';
 import { Router } from '@angular/router';
-
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-standings-tab',
@@ -14,14 +14,15 @@ export class StandingsTabPage implements OnInit {
   competition: any;
   competition_id: string ="2021";
 
-  constructor(private footballService: FootballService, private router: Router) {
+  constructor(private footballService: FootballService, private router: Router,
+    private dataService: DataService) {
    
    }
 
   ngOnInit() {
 
     this.getTeams()
-
+    this.dataService.setData("Haloo");
     this.teams = []
     
   console.log(this.teams);

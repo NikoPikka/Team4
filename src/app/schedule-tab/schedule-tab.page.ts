@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FootballService } from '../football.service';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-schedule-tab',
@@ -12,11 +13,14 @@ export class ScheduleTabPage implements OnInit {
   myDate: string = new Date().toISOString().substr(0, 10);
   competition_id: string="2021";
   competition: any;
+  testi: any;
 
-  constructor(private footballService: FootballService, private router: Router) {}
+  constructor(private footballService: FootballService, private router: Router, private dataService: DataService) {}
 
   ngOnInit() {
     this.getGames()
+    this.testi = this.dataService.getData();
+    console.log(this.testi);
     
   }
   getGames(){
