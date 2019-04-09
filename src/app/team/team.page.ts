@@ -19,9 +19,8 @@ export class TeamPage implements OnInit {
   matches: any[];
   myDate: String = '2019-04-07'; //new Date().toISOString().substring(0, 10);
 
-  matchDate: boolean = false;
+  matchToday: boolean = false;
   utcDate: any;
-
 
 
   players: [];
@@ -49,20 +48,27 @@ export class TeamPage implements OnInit {
     .getData('/teams/'+ this.team_id + '/matches/')
     .subscribe(data => {
       this.allMatches = data;
-      
       this.matches= this.allMatches.matches;
 
 
     for (let match of this.matches) {   
-      var mdate = match.utcDate; 
+      var mdate = match.utcDate;
       if (mdate.includes(this.myDate)) {
-        this.matchDate = true;
+        this.matchToday = true;
         console.log(match.utcDate);
+        match["today"] = "yes";
       }
+      else {
+        this.matchToday = false;
+        match["today"] = "no";
+      }
+
+
+
 
     }
 
-      //console.log(this.matches);
+      console.log(this.matches);
     })
   }
 

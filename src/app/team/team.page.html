@@ -49,12 +49,13 @@
               <ion-datetime display-format="MMM DD, YYYY " [(ngModel)]="myDate">
               </ion-datetime>
           </ion-item>
-
+          
           <ion-grid *ngFor="let match of matches">
             <ion-row class="schedule_row">
               <ion-col>
-                <div>
+                <div  [ngStyle]="match?.today=='yes' && {'color': '#ffffff'}">
                   {{match?.utcDate.substring(0, 10)}}
+                  {{match?.today}}
                 </div>
               </ion-col>
               <ion-col size="4.5">
