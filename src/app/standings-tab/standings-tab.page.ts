@@ -14,8 +14,8 @@ export class StandingsTabPage implements OnInit {
   competition: any;
   competition_id: string ="2021";
 
-  constructor(private footballService: FootballService, private router: Router,public navParams: NavParams) {
-    this.competition_id = navParams.get("id");
+  constructor(private footballService: FootballService, private router: Router) {
+   
    }
 
   ngOnInit() {
@@ -35,14 +35,6 @@ getTeams(){
     .getData('/competitions/'+ this.competition_id + '/standings')
     .subscribe(data => {
       this.competition = data;
-<<<<<<< HEAD
-      for(let teams of this.competition.standings){
-        for(let team_name of teams.table){
-          console.log(this.competition_id)
-          console.log("Tiimii " + team_name.team.name);
-        }
-        
-=======
       for(let items of this.competition.standings){
         if(items.type == "TOTAL"){
         for(let team_name of items.table){
@@ -50,7 +42,6 @@ getTeams(){
           x++;
          }
         } 
->>>>>>> d680b18bb4bd8a72785dd66dfa9c294c231f9e10
       }
     })
 

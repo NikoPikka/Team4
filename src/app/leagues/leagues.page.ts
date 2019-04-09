@@ -26,11 +26,4 @@ id: string;
       }
       })
   }
-  sendId(id: string) {
-    this.navCtrl.push(StandingsTabPage, {
-      id: competition_id
-    });
-  }
 }
-
-
