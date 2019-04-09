@@ -17,7 +17,7 @@ export class TeamPage implements OnInit {
   team: any;
   allMatches: any;
   matches: any[];
-  myDate: String = '2019-04-06'; //new Date().toISOString().substring(0, 10);
+  myDate: String = '2019-04-07'; //new Date().toISOString().substring(0, 10);
 
   matchDate: boolean = false;
   utcDate: any;
@@ -54,15 +54,15 @@ export class TeamPage implements OnInit {
 
 
     for (let match of this.matches) {   
-      var test = match.utcDate; 
-      if (test.includes(this.myDate)) {
+      var mdate = match.utcDate; 
+      if (mdate.includes(this.myDate)) {
         this.matchDate = true;
         console.log(match.utcDate);
       }
 
     }
 
-      console.log(this.matches);
+      //console.log(this.matches);
     })
   }
 
