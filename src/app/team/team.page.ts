@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class TeamPage implements OnInit {
 
-  schedule: boolean = false;
+  schedule: boolean = true;
   scores: boolean = false;
   roster: boolean = false;
 
