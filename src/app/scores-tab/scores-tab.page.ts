@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 })
 export class ScoresTabPage implements OnInit {
 
-  items = [];
-  scores = [];
+  stats = [];
   myDate: String = new Date().toISOString();
   competition_id: string = "2021";
   competition: any;
+
 
   constructor(private footballService: FootballService, private router: Router) { }
 
@@ -27,14 +27,14 @@ export class ScoresTabPage implements OnInit {
     .getData('/competitions/'+ this.competition_id + '/matches')
     .subscribe(data => {
       this.competition = data;
+      this.stats = this.competition.matches.sort((b, a) => a.utcDate <= b.utcDate ? -1 : 1);
       for(let items of this.competition.matches){ 
-          this.items[x] = items;
+        if(items.status == "FINISHED"){  
+        this.stats[x] = items;
           x++;
-      } 
-      for(let items of this.competition.matches.score){
-        this.scores[x] = items;
-        x++;
-      } 
+        }
+      }  
+        console.log(this.competition.matches);
         
     })
     

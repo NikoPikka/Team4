@@ -1,31 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-item>
-      <ion-label><ion-icon name="calendar"> 
-      </ion-icon></ion-label>
-      <ion-datetime display-format="MMM DD, YYYY " [(ngModel)]="myDate">
-      </ion-datetime>
-    </ion-item>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content>
 
   <ion-grid>
     <ion-row>
       <ion-col>
-        <div *ngFor="let team of items" class="cols">
-          {{team.homeTeam.name}}
+        <div *ngFor="let team of stats" >
+          <button routerLink="/team" routerDirection="root">{{team.homeTeam.name}}</button>
         </div>
       </ion-col>
       <ion-col>
-        <div *ngFor="let team of items" class="cols">
-          {{team.awayTeam.name}}
+        <div *ngFor="let team of stats">
+          <button routerLink="/team" routerDirection="root">{{team.awayTeam.name}}</button>
         </div>
       </ion-col>
        <ion-col>
-        <div *ngFor="let score of scores" class="cols">
-          {{score.fullTime.homeTeam}} - {{score.fullTime.awayTeam}}
+        <div *ngFor="let score of stats" >
+          {{score.score.fullTime.homeTeam}} - {{score.score.fullTime.awayTeam}}
         </div>
       </ion-col>
     </ion-row>
