@@ -5,6 +5,66 @@
 </ion-header>
 
 <ion-content padding>
+  <button  block routerLink="/league" routerDirection="root" >
+    <img src="..\assets\img\CL_logo.png">
+    <p>Champions-L</p>
+  </button>
+
+  <button  block routerLink="/league" routerDirection="root">
+    <img src="..\assets\img\BL_logo.png">
+    <p>Bundesliga</p>
+  </button>
+
+  <button  block>
+    <img src="..\assets\img\LN_logo.png">
+    <p>Liga Nos</p>
+  </button>
+  
+  <button  block (click)="getLeague(2021)" >
+    <img src="..\assets\img\PL_logo.png">
+    <p>Premier League</p>
+  </button>
+  
+  <button  block routerLink="/league" routerDirection="root">
+    <img src="..\assets\img\ED_logo.png">
+    <p>Eredivisie</p>
+  </button>
+
+  <button  block routerLink="/league" routerDirection="root">
+    <img src="..\assets\img\L1_logo.png">
+    <p>Ligue 1</p>
+  </button>
+
+  <button  block routerLink="/league" routerDirection="root"> 
+    <img src="..\assets\img\SA_logo.png">
+    <p>Serie A Italy</p>
+  </button>
+  
+  <button  block>
+    <img src="..\assets\img\LA_logo.png">
+    <p>La Liga</p>
+  </button>
+  
+  <button  block>
+    <img src="..\assets\img\CS_logo.png">
+    <p>Championship</p>
+  </button>
+    
+  <button  block>
+    <img src="..\assets\img\SAB_logo.png">
+    <p>Serie A brazil</p>
+  </button>
+    
+  <button  block>
+    <img src="..\assets\img\WC_logo.png">
+    <p>World Cup</p>
+  </button>
+
+  <button  block>
+    <img src="..\assets\img\EU_logo.png">
+    <p>Europa league</p>
+  </button>
+  <br>
         <button *ngFor="let league of leagues.competitions" block routerLink="/league/" routerDirection="root">
           <img src="..\assets\img\{{league?.name}}.png">
           <p>{{league?.name}} </p>

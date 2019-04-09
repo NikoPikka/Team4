@@ -24,18 +24,21 @@ ion-tab-button {
 }
 
 .tab-contain {
-    padding: 1%;
+    padding: 0;
+    padding-right: 2%;
+    padding-left: 2%;
     background-color: #ffed00;
     background-image: url('/../assets/img/grass.jpg');
     background-size: contain;
-    padding-bottom: 100%;
+    //padding-bottom: 100%;
 }
 
 .tab-block {
     background-color: $bg;
     padding: 2%;
     margin: 0;
-    opacity: 0.9;
+    opacity: 0.95;
+    padding-bottom: 100%;
 }
 
 ion-tab-bar {
@@ -52,3 +55,6 @@ ion-tab-bar {
     right: 10%;
 }
 
+.schedule_row {
+    border-bottom: 1px solid #000000;
+}

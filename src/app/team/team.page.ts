@@ -9,25 +9,61 @@ import { Router } from '@angular/router';
 })
 export class TeamPage implements OnInit {
 
-  team_name: string = "Testijoukkue"
-
   schedule: boolean = false;
   scores: boolean = false;
   roster: boolean = false;
 
-  team_id: string = '19';
+  team_id: string = '12';
   team: any;
-  myDate: String = new Date().toISOString();
+  allMatches: any;
+  matches: any[];
+  myDate: String = '2019-04-07'; //new Date().toISOString().substring(0, 10);
+
+  matchDate: boolean = false;
+  utcDate: any;
+
+
+
+  players: [];
 
   constructor(private footballService: FootballService, private router: Router) { }
 
   ngOnInit() {
-      this.footballService
-      .getData('/teams/'+ this.team_id)
-      .subscribe(data => {
-        this.team = data;
-        console.log(this.team);
-      })
+    this.TeamInfo();
+    this.TeamMatches();
+
+  }
+
+  TeamInfo() {
+    this.footballService
+    .getData('/teams/'+ this.team_id)
+    .subscribe(data => {
+      this.team = data;
+      this.players= this.team.squad;
+      console.log(this.team);
+    })
+  }
+
+  TeamMatches() {
+    this.footballService
+    .getData('/teams/'+ this.team_id + '/matches/')
+    .subscribe(data => {
+      this.allMatches = data;
+      
+      this.matches= this.allMatches.matches;
+
+
+    for (let match of this.matches) {   
+      var mdate = match.utcDate; 
+      if (mdate.includes(this.myDate)) {
+        this.matchDate = true;
+        console.log(match.utcDate);
+      }
+
+    }
+
+      //console.log(this.matches);
+    })
   }
 
   scheduleTab() {
