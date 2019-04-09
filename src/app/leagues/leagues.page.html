@@ -3,7 +3,7 @@
     <ion-title class="header-title">All Leagues</ion-title>
     </ion-toolbar>
 </ion-header>
-
+<ion-content>
 <button *ngFor="let league of leagues.competitions" block routerLink="/league/" routerDirection="root">
   <img src="..\assets\img\{{league?.name}}.png">
   <p>{{league?.name}} </p>
