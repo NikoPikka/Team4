@@ -30,6 +30,7 @@ ion-tab-button {
     background-color: #ffed00;
     background-image: url('/../assets/img/grass.jpg');
     background-size: contain;
+    background-attachment: fixed;
     //padding-bottom: 100%;
 }
 
@@ -42,9 +43,14 @@ ion-tab-button {
 }
 
 ion-tab-bar {
-    background-color: #ffed00;
-    background-image: url('/../assets/img/grass.jpg');
+    //background-color: #f7f8f3;
+    background-color: #ffffff;
+    //background-image: url('/../assets/img/grass.jpg');
     background-size: contain;
+}
+
+.it {
+    width:100px;
 }
 
 .team_logo {
