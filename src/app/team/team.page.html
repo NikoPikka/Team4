@@ -51,11 +51,10 @@
           </ion-item>
           
           <ion-grid *ngFor="let match of matches">
-            <ion-row class="schedule_row">
+            <ion-row class="schedule_row" *ngIf="match?.status=='SCHEDULED'" [ngStyle]="match?.today=='yes' && {'color': '#f44242'}">
               <ion-col>
-                <div  [ngStyle]="match?.today=='yes' && {'color': '#ffffff'}">
+                <div>
                   {{match?.utcDate.substring(0, 10)}}
-                  {{match?.today}}
                 </div>
               </ion-col>
               <ion-col size="4.5">
@@ -93,9 +92,31 @@
               </ion-datetime>
           </ion-item>
 
-          <h3>Lukkari...</h3>
+          <ion-grid *ngFor="let match of matches">
+            <ion-row class="schedule_row" *ngIf="match?.status=='FINISHED'" [ngStyle]="match?.today=='yes' && {'color': '#f44242'}">
+              <ion-col>
+                <div>
+                  {{match?.utcDate.substring(0, 10)}}
+                </div>
+              </ion-col>
+              <ion-col size="4">
+                <div>
+                  {{match?.homeTeam.name}}
+                </div>
+              </ion-col>
+              <ion-col size="4">
+                <div>
+                  {{match?.awayTeam.name}}
+                </div>
+              </ion-col>
+              <ion-col>
+                <div>
+                  {{match?.score.fullTime.homeTeam}} - {{match?.score.fullTime.awayTeam}}
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
 
-          <p>No eiku se otteluohjelma...{{myDate}}</p>
         </div>
       </div>
 
