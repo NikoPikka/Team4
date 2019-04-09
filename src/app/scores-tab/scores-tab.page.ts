@@ -29,7 +29,7 @@ export class ScoresTabPage implements OnInit {
       this.competition = data;
       this.stats = this.competition.matches.sort((b, a) => a.utcDate <= b.utcDate ? -1 : 1);
       for(let items of this.competition.matches){ 
-        if(items.status == "FINISHED"){  
+        if(items.status == "FINISHED" ){  
         this.stats[x] = items;
           x++;
         }
