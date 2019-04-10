@@ -31,10 +31,9 @@ export class ScheduleTabPage implements OnInit {
       this.competition = data;
       for(let items of this.competition.matches){
         var gameDay = items.utcDate.substr(0, 10);
-        if(items.status == "SCHEDULED" && this.myDate == gameDay){
+        if(items.status == "SCHEDULED"){
           this.teams[x] = items;
           x++;
-          console.log(items.season.currentMatchday);
         }
          
       }    

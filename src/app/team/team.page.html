@@ -20,15 +20,15 @@
     
       <ion-tab-bar>
     
-        <ion-tab-button (click)="scheduleTab()" [ngStyle]="schedule && {'border-color': '#ffffff', 'border-radius': '0px'}">
+        <ion-tab-button (click)="scheduleTab()" [ngStyle]="schedule && {'border-color': '#f7f8f3', 'border-radius': '0px', 'background-color': '#f7f8f3'}">
           <ion-icon name="calendar"></ion-icon>
           <ion-label>Schedule</ion-label>
         </ion-tab-button>
-        <ion-tab-button (click)="scoresTab()" [ngStyle]="scores && {'border-color': '#ffffff', 'border-radius': '0px'}">
+        <ion-tab-button (click)="scoresTab()" [ngStyle]="scores && {'border-color': '#f7f8f3', 'border-radius': '0px', 'background-color': '#f7f8f3'}">
           <ion-icon name="clipboard"></ion-icon>
           <ion-label>Scores</ion-label>
         </ion-tab-button>
-        <ion-tab-button (click)="rosterTab()" [ngStyle]="roster && {'border-color': '#ffffff', 'border-radius': '0px'}">
+        <ion-tab-button (click)="rosterTab()" [ngStyle]="roster && {'border-color': '#f7f8f3', 'border-radius': '0px', 'background-color': '#f7f8f3'}">
           <ion-icon name="contacts"></ion-icon>
           <ion-label>Roster</ion-label>
         </ion-tab-button>
@@ -36,19 +36,22 @@
       </ion-tab-bar>
     
     
-    <!--SCHEDULE-TAB-->
+<!--SCHEDULE-TAB---------------------------------------------->
     <div *ngIf=schedule>
 
       <div class="tab-contain">
         <div class="tab-block">
 
+          <!--
           <ion-item>
               <ion-label>
                 <ion-icon name="calendar"> </ion-icon>
               </ion-label>
               <ion-datetime display-format="MMM DD, YYYY " [(ngModel)]="myDate">
               </ion-datetime>
-          </ion-item>
+          </ion-item> -->
+
+          <h3 padding>Upcoming matches</h3>
 
           <div *ngFor="let match of matches" >
             <ion-grid *ngIf="match?.status=='SCHEDULED'">
@@ -72,7 +75,6 @@
             </ion-grid>
           </div>
 
-          <p>No eiku se otteluohjelmaaa...{{myDate}}</p>
         </div>
       </div>
 
@@ -80,26 +82,26 @@
 
 
 
-    <!--SCORES-TAB-->
+<!--SCORES-TAB---------------------------------------------->
     <div *ngIf=scores>
         
       <div class="tab-contain">
         <div class="tab-block">
-          
-          <ion-item>
-              <ion-label>
-                <ion-icon name="calendar"> </ion-icon>
-              </ion-label>
-              <ion-datetime display-format="MMM DD, YYYY " [(ngModel)]="myDate">
-              </ion-datetime>
-          </ion-item>
+
+          <h3 padding>Scores</h3>
+
+          <div><ion-row class="scores_row_title" (click)="currentYear()"><ion-col>
+              <ion-icon class="arrow" *ngIf=currentYearOpen large name="arrow-dropdown"></ion-icon>
+              <ion-icon class="arrow" *ngIf=!currentYearOpen large name="arrow-dropright"></ion-icon>
+              {{year}}
+          </ion-col></ion-row></div>
 
           <div *ngFor="let match of matches" >
-            <ion-grid *ngIf="match?.status=='FINISHED'">
-              <ion-row class="schedule_row" [ngStyle]="match?.today=='yes' && {'color': '#f44242'}">
+            <ion-grid *ngIf="match?.status=='FINISHED' && match?.utcDate.substring(0, 4)==year && currentYearOpen">
+              <ion-row class="scores_row" [ngStyle]="match?.today=='yes' && {'color': '#f44242'}">
                 <ion-col>
                   <div>
-                    {{match?.utcDate.substring(0, 10)}}
+                    {{match?.utcDate.substring(5, 10)}}
                   </div>
                 </ion-col>
                 <ion-col size="4">
@@ -121,6 +123,39 @@
             </ion-grid>
           </div>
 
+
+          <div><ion-row class="scores_row_title" (click)="lastYear()"><ion-col>
+              <ion-icon class="arrow" *ngIf=lastYearOpen large name="arrow-dropdown"></ion-icon>
+              <ion-icon class="arrow" *ngIf=!lastYearOpen large name="arrow-dropright"></ion-icon>
+              {{year-1}}
+          </ion-col></ion-row></div>          
+
+          <div *ngFor="let match of matches" >
+              <ion-grid *ngIf="match?.status=='FINISHED' && match?.utcDate.substring(0, 4)==(year-1) && lastYearOpen">
+                <ion-row class="scores_row" [ngStyle]="match?.today=='yes' && {'color': '#f44242'}">
+                  <ion-col>
+                    <div>
+                      {{match?.utcDate.substring(5, 10)}}
+                    </div>
+                  </ion-col>
+                  <ion-col size="4">
+                    <div>
+                      {{match?.homeTeam.name}}
+                    </div>
+                  </ion-col>
+                  <ion-col size="4">
+                    <div>
+                      {{match?.awayTeam.name}}
+                    </div>
+                  </ion-col>
+                  <ion-col>
+                    <div>
+                      {{match?.score.fullTime.homeTeam}} - {{match?.score.fullTime.awayTeam}}
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+          </div>
         </div>
       </div>
 
@@ -128,15 +163,15 @@
 
 
 
-    <!--ROSTER-TAB-->
+<!--ROSTER-TAB---------------------------------------------->
     <div *ngIf=roster>
 
         <div class="tab-contain">
             <div class="tab-block">
     
-              <h3>Roster</h3>
+              <h3 padding>Roster</h3>
     
-              <div *ngFor="let player of players">
+              <div padding *ngFor="let player of players">
                   <p>{{player.name}}</p>
                   <p>Position: {{player.position}}</p>
               </div>

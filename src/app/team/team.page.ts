@@ -11,6 +11,10 @@ export class TeamPage implements OnInit {
 
   schedule: boolean = true;
   scores: boolean = false;
+  currentYearOpen: boolean = false;
+  year: number = new Date().getFullYear()
+  lastYearOpen: boolean = false;
+
   roster: boolean = false;
 
   team_id: string = '64';
@@ -83,6 +87,14 @@ export class TeamPage implements OnInit {
     this.schedule = false;
     this.scores = true;
     this.roster = false;
+  }
+
+  currentYear() {
+    this.currentYearOpen = (this.currentYearOpen === true) ? false: true;
+  }
+
+  lastYear() {
+    this.lastYearOpen = (this.lastYearOpen === true) ? false: true;
   }
 
   rosterTab() {
