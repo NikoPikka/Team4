@@ -1,17 +1,56 @@
 <ion-header>
   <ion-toolbar color="black">
     <ion-title class="header-title">
-      Football App HOME
+      Football App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-button expand="block" routerLink="/league/2021" routerDirection="root">
-    LIIGA
-  </ion-button>
-  <ion-button expand="block" routerLink="/team/12" routerDirection="root">
-    JOUKKUE
-  </ion-button>
-  
+<ion-content>
+  <div class="content">
+    
+    <div class="tab-block">
+      
+      <h1 padding>Top 3 Leagues</h1>
+
+      <ion-grid>
+        <ion-row style="background-color: #f7f8f3">
+          <ion-col>
+              <img src="..\assets\img\Premier League.png" style="max-height: 70px;">
+          </ion-col>
+          <ion-col size="10">
+              <h3>PremierLeague</h3>
+              <p>Upcoming games</p>
+          </ion-col>
+        </ion-row>
+
+        <div *ngFor="let match of matches" >
+          <ion-row>
+            <ion-col>
+              <div>
+                  {{match.matches.id}}
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div>
+                test
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div>
+                test
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+                test
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+
+      </ion-grid>
+    </div>
+  </div>
+
 </ion-content>

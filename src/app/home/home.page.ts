@@ -10,19 +10,18 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
   
-  items: any;
+  matches: any[];
   test: string = '204950';
 
   constructor( private footballService: FootballService, private router: Router) {
   }
 
   ngOnInit() {
-    // testing..................................
     this.footballService
-    .getData('/matches/'+ this.test)
+    .getData('/competitions/2021/matches')
     .subscribe(data => {
-      console.log(data);
-      this.items = data;
+      this.matches = data;
+      console.log(this.matches);
     })
   }
 
