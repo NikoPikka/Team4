@@ -22,7 +22,6 @@ id: string;
       this.leagues = data;
       console.log(this.leagues);
       for(let competitions of this.leagues.competitions)  {
-          console.log(competitions.id);
       }
       })
   }

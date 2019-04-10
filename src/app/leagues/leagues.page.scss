@@ -20,7 +20,7 @@ button {
       margin-left: 1%;
       max-width: 30%;
       max-height: 30%;
-      margin-bottom: 20%;
+      margin-bottom: 22%;
   }
     p {
       font-size: 3vw;
@@ -55,7 +55,7 @@ button {
       }
     }
 
-      //pixel 2 XL and iphones
+      //Iphones
 @media only screen and (orientation: portrait) and (min-height: 733px) and (max-height: 824px) {
   button {
       margin-top: 2%;
@@ -77,8 +77,8 @@ button {
         margin-left: 1%;
         max-width: 30%;
         max-height: 30%;
-        margin-bottom: 22%;
-        margin-bottom: 22%;
+        margin-bottom: 23%;
+        
     }
       p {
         font-size: 3vw;
@@ -86,7 +86,7 @@ button {
     }
     
 //ipad
-@media only screen and (orientation: portrait) and (min-height: 825px) and (max-height: 1024px) {
+@media only screen and (orientation: portrait) and (min-height: 825px) and (max-height: 1025px) {
   button {
       margin-top: 2%;
       background-color: transparent;
