@@ -12,10 +12,10 @@ export class LeaguesPage implements OnInit {
 leagues: any;
 id: string;
 
-
   constructor(private footballService: FootballService, private router: Router, private dataService: DataService) { }
 
   ngOnInit() {
+
     this.footballService
     .getData('/competitions/?plan=TIER_ONE')
     .subscribe(data => {
