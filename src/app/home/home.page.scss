@@ -22,6 +22,21 @@ ion-toolbar {
     opacity: 0.9;   
 }
 
-ion-grid {
+.bottom_grid {
+    //padding-bottom: 100px;
+}
+
+.top_grid {
     border-top: #000000 solid 2px;
+}
+
+.pad_row {
+    padding-left: 20px;
+    background-color: #ffffff;
+}
+
+
+.pad30_row {
+    padding-left: 30px;
+    background-color: #ffffff;
 }

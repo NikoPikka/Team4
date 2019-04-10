@@ -90,7 +90,7 @@
 
           <h3 padding>Scores</h3>
 
-          <div><ion-row class="scores_row_title" (click)="currentYear()"><ion-col>
+          <div><ion-row class="pointer" class="scores_row_title" (click)="currentYear()"><ion-col>
               <ion-icon class="arrow" *ngIf=currentYearOpen large name="arrow-dropdown"></ion-icon>
               <ion-icon class="arrow" *ngIf=!currentYearOpen large name="arrow-dropright"></ion-icon>
               {{year}}
@@ -124,7 +124,7 @@
           </div>
 
 
-          <div><ion-row class="scores_row_title" (click)="lastYear()"><ion-col>
+          <div><ion-row class="pointer" class="scores_row_title" (click)="lastYear()"><ion-col>
               <ion-icon class="arrow" *ngIf=lastYearOpen large name="arrow-dropdown"></ion-icon>
               <ion-icon class="arrow" *ngIf=!lastYearOpen large name="arrow-dropright"></ion-icon>
               {{year-1}}

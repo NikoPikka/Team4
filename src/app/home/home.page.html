@@ -13,22 +13,34 @@
       
       <h1 padding>Top 3 Leagues</h1>
 
-      <ion-grid>
+<!--------------------------------------------------------------------------------------------Premier League-->
+<!--------------------------------------------------------------Title-->
+      <ion-grid class="top_grid pointer" (click)="premierLeague()">
         <ion-row style="background-color: #f7f8f3">
           <ion-col>
               <img src="..\assets\img\Premier League.png" style="max-height: 70px;">
           </ion-col>
           <ion-col size="10">
               <h3>PremierLeague</h3>
-              <p>Upcoming games</p>
           </ion-col>
         </ion-row>
 
+<!--------------------------------------------------------------Upcoming matches-->
+        <ion-buttons *ngIf=top1 start class="pad_row">
+          <ion-button color="dark" expand="full" >   
+              <p class="pointer" (click)="upcoming()">
+                <ion-icon class="arrow" *ngIf=upcomingOpen name="arrow-dropdown"></ion-icon>
+                <ion-icon class="arrow" *ngIf=!upcomingOpen name="arrow-dropright"></ion-icon>
+                Upcoming game
+              </p>
+          </ion-button>
+        </ion-buttons>
+
         <div *ngFor="let match of matches" >
-          <ion-row>
+          <ion-row class="pad30_row" *ngIf="match?.status=='SCHEDULED' && upcomingOpen && top1">
             <ion-col>
               <div>
-                  {{match.matches.id}}
+                  {{match?.utcDate.substring(0, 10)}}
               </div>
             </ion-col>
             <ion-col size="4">
@@ -37,19 +49,126 @@
               </div>
             </ion-col>
             <ion-col size="4">
-              <div>
-                test
-              </div>
-            </ion-col>
-            <ion-col>
               <div>
                 test
               </div>
             </ion-col>
           </ion-row>
         </div>
-
       </ion-grid>
+
+<!--------------------------------------------------------------Scores/Played matches-->
+      <ion-grid class="bottom_grid">
+        <ion-buttons *ngIf=top1 start class="pad_row">
+          <ion-button expand="full" >   
+              <p class="pointer" (click)="scores()">
+                <ion-icon class="arrow" *ngIf=scoresOpen name="arrow-dropdown"></ion-icon>
+                <ion-icon class="arrow" *ngIf=!scoresOpen name="arrow-dropright"></ion-icon>
+                Scores
+              </p>
+          </ion-button>
+        </ion-buttons>
+
+  
+          <div *ngFor="let match of matches" >
+            <ion-row class="pad30_row" *ngIf="match?.status=='FINISHED' && scoresOpen && top1">
+              <ion-col>
+                <div>
+                    {{match?.utcDate.substring(0, 10)}}
+                </div>
+              </ion-col>
+              <ion-col size="4">
+                <div>
+                  test
+                </div>
+              </ion-col>
+              <ion-col size="4">
+                <div>
+                  test
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-grid>
+
+
+<!--------------------------------------------------------------------------------------------SERIE A-->
+<!--------------------------------------------------------------Title2-->
+      <ion-grid class="top_grid pointer" (click)="serieA()">
+          <ion-row style="background-color: #f7f8f3">
+            <ion-col>
+                <img src="..\assets\img\Serie A.png" style="max-height: 70px;">
+            </ion-col>
+            <ion-col size="10">
+                <h3>SerieA</h3>
+            </ion-col>
+          </ion-row>
+<!--------------------------------------------------------------Upcoming matches-->
+      <ion-buttons *ngIf=top2 start class="pad_row">
+          <ion-button color="dark" expand="full" >   
+              <p class="pointer" (click)="upcoming()">
+                <ion-icon class="arrow" *ngIf=upcomingOpen name="arrow-dropdown"></ion-icon>
+                <ion-icon class="arrow" *ngIf=!upcomingOpen name="arrow-dropright"></ion-icon>
+                Upcoming game
+              </p>
+          </ion-button>
+        </ion-buttons>
+
+        <div *ngFor="let match of matches" >
+          <ion-row class="pad30_row" *ngIf="match?.status=='SCHEDULED' && upcomingOpen && top2">
+            <ion-col>
+              <div>
+                  {{match?.utcDate.substring(0, 10)}}
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div>
+                test
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div>
+                test
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-grid>
+
+<!--------------------------------------------------------------Scores/Played matches-->
+      <ion-grid class="bottom_grid">
+        <ion-buttons *ngIf=top2 start class="pad_row">
+          <ion-button expand="full" >   
+              <p class="pointer" (click)="scores()">
+                <ion-icon class="arrow" *ngIf=scoresOpen name="arrow-dropdown"></ion-icon>
+                <ion-icon class="arrow" *ngIf=!scoresOpen name="arrow-dropright"></ion-icon>
+                Scores
+              </p>
+          </ion-button>
+        </ion-buttons>
+
+
+          <div *ngFor="let match of matches" >
+            <ion-row class="pad30_row" *ngIf="match?.status=='FINISHED' && scoresOpen && top2">
+              <ion-col>
+                <div>
+                    {{match?.utcDate.substring(0, 10)}}
+                </div>
+              </ion-col>
+              <ion-col size="4">
+                <div>
+                  test
+                </div>
+              </ion-col>
+              <ion-col size="4">
+                <div>
+                  test
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-grid>
+
     </div>
   </div>
 
