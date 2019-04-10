@@ -7,7 +7,7 @@ export class DataService {
 
   constructor() { }
 
-  data: any;
+  data: any = 'test';
 
   public setData(data){
     this.data = data;

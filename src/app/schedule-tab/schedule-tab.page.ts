@@ -13,16 +13,15 @@ export class ScheduleTabPage implements OnInit {
   myDate: string = new Date().toISOString().substr(0, 10);
   competition_id: string="2021";
   competition: any;
-  testi: any;
 
   constructor(private footballService: FootballService, private router: Router, private dataService: DataService) {}
 
   ngOnInit() {
-    this.getGames()
-    this.testi = this.dataService.getData();
-    console.log(this.testi);
+    this.competition_id = this.dataService.getData();
+    this.getGames();
     
   }
+
   getGames(){
     var x = 0;
     this.footballService

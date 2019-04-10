@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FootballService } from '../football.service';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 
 @Component({
@@ -12,14 +13,15 @@ export class ScoresTabPage implements OnInit {
 
   stats = [];
   myDate: String = new Date().toISOString();
-  competition_id: string = "2021";
+  competition_id: string = '2021';
   competition: any;
 
 
-  constructor(private footballService: FootballService, private router: Router) { }
+  constructor(private dataService: DataService, private footballService: FootballService, private router: Router) { }
 
   ngOnInit() {
-    this.getScores()
+    this.competition_id = this.dataService.getData();
+    this.getScores();
   }
 
   getScores(){

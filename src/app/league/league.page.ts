@@ -11,11 +11,16 @@ export class LeaguePage {
 
   competition_id: string;
 
-  constructor(private footballService: DataService, private route: ActivatedRoute) { }
+  constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
   this.competition_id = this.route.snapshot.paramMap.get('id');
+  this.pushId();
+  }
 
+  pushId() {
+    this.dataService
+    .setData(this.competition_id);
   }
 
 
