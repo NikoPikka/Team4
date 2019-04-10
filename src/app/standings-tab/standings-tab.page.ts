@@ -22,16 +22,14 @@ export class StandingsTabPage implements OnInit {
   ngOnInit() {
 
     this.getTeams()
-<<<<<<< HEAD
+
     this.testi = this.dataService.getData();
     console.log("1");
     console.log(this.testi);
     console.log("2");
   console.log(this.teams);
   console.log(this.competition_id);
-=======
     this.dataService.setData("Haloo");
->>>>>>> 53be5a15b2ca2926a605575ad505e6e72d22036b
   
   }
   
