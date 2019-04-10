@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FootballService } from '../football.service';
 import { Router } from '@angular/router';
-
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-leagues',
@@ -13,7 +13,7 @@ leagues: any;
 id: string;
 
 
-  constructor(private footballService: FootballService, private router: Router) { }
+  constructor(private footballService: FootballService, private router: Router, private dataService: DataService) { }
 
   ngOnInit() {
     this.footballService

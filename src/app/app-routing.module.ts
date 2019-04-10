@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'leagues', loadChildren: './leagues/leagues.module#LeaguesPageModule' },
   { path: 'league', loadChildren: './league/league.module#LeaguePageModule' },
-  { path: 'team', loadChildren: './team/team.module#TeamPageModule' }
+  { path: 'team/:id', loadChildren: './team/team.module#TeamPageModule' }
   
 ];
 

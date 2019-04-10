@@ -4,7 +4,7 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
-<button *ngFor="let league of leagues?.competitions" block routerLink="/league/" routerDirection="root">
+<button (click)="setData(leagues.competitions.id)" *ngFor="let league of leagues?.competitions" block routerLink="/league/" routerDirection="root">
   <img src="..\assets\img\{{league?.name}}.png">
   <p>{{league?.name}} </p>
 </button>

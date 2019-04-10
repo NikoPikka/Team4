@@ -11,10 +11,11 @@ export class DataService {
 
   public setData(data){
     this.data = data;
+    console.log(data);
   }
 
   public getData(){
     return this.data;
   }
-  
+
 }

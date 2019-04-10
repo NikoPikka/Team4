@@ -25,8 +25,8 @@ ion-tab-button {
 
 .tab-contain {
     padding: 0;
-    padding-right: 2%;
-    padding-left: 2%;
+    padding-right: 0;
+    padding-left: 0;
     background-color: #ffed00;
     background-image: url('/../assets/img/grass.jpg');
     background-size: contain;
@@ -36,15 +36,18 @@ ion-tab-button {
 
 .tab-block {
     background-color: $bg;
-    padding: 2%;
+    padding: 0;
     margin: 0;
     opacity: 0.95;
-    padding-bottom: 100%;
+    padding-bottom: 50%;
+    //padding-top:5%;
 }
 
+
+
 ion-tab-bar {
-    //background-color: #f7f8f3;
-    background-color: #ffffff;
+    background-color: #f7f8f3;
+    //background-color: #ffffff;
     //background-image: url('/../assets/img/grass.jpg');
     background-size: contain;
 }
@@ -63,4 +66,30 @@ ion-tab-bar {
 
 .schedule_row {
     border-bottom: 1px solid #000000;
+    background-color: #f7f8f3; 
+    min-height:50px;
+}
+
+.scores_row {
+    border-bottom: 1px solid #000000;
+    margin-left:2%;
+}
+
+.scores_row_title {
+    border-bottom: 2px solid #000000;
+    background-color: #f7f8f3; 
+    min-height:50px;
+    //font-size: 120%;
+}
+
+h3 {
+    margin:0;
+}
+
+.arrow {
+    font-size: 170%;
+}
+
+.tab-selected, .tab-has-label, .tab-has-icon, .tab-layout-icon-top, .ion-activatable, hydrated {
+    min-width: 33%;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FootballService } from '../football.service';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-team',
@@ -11,9 +12,13 @@ export class TeamPage implements OnInit {
 
   schedule: boolean = true;
   scores: boolean = false;
+  currentYearOpen: boolean = false;
+  year: number = new Date().getFullYear()
+  lastYearOpen: boolean = false;
+
   roster: boolean = false;
 
-  team_id: string = '64';
+  team_id: string;
   team: any;
   allMatches: any;
   matches: any[];
@@ -25,9 +30,10 @@ export class TeamPage implements OnInit {
 
   players: [];
 
-  constructor(private footballService: FootballService, private router: Router) { }
+  constructor(private footballService: FootballService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.team_id = this.route.snapshot.paramMap.get('id');
     this.TeamInfo();
     this.TeamMatches();
 
@@ -83,6 +89,14 @@ export class TeamPage implements OnInit {
     this.schedule = false;
     this.scores = true;
     this.roster = false;
+  }
+
+  currentYear() {
+    this.currentYearOpen = (this.currentYearOpen === true) ? false: true;
+  }
+
+  lastYear() {
+    this.lastYearOpen = (this.lastYearOpen === true) ? false: true;
   }
 
   rosterTab() {

@@ -16,12 +16,12 @@
     <ion-row>
       <ion-col>
         <div *ngFor="let team of teams" class="cols">
-            <button routerLink="/team" routerDirection="root">{{team.homeTeam.name}}</button>
+            <button routerLink="/team/{{team.homeTeam.id}}" routerDirection="root">{{team.homeTeam.name}}</button>
         </div>
       </ion-col>
       <ion-col>
         <div *ngFor="let team of teams" class="cols">
-            <button routerLink="/team" routerDirection="root">{{team.awayTeam.name}}</button>
+            <button routerLink="/team/{{team.awayTeam.id}}" routerDirection="root">{{team.awayTeam.name}}</button>
         </div>
       </ion-col>
     </ion-row>

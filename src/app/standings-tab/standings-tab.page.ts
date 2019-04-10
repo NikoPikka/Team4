@@ -9,7 +9,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./standings-tab.page.scss'],
 })
 export class StandingsTabPage implements OnInit {
-  
+  testi: any;
   teams = [];
   competition: any;
   competition_id: string ="2021";
@@ -22,6 +22,13 @@ export class StandingsTabPage implements OnInit {
   ngOnInit() {
 
     this.getTeams()
+
+    this.testi = this.dataService.getData();
+    console.log("1");
+    console.log(this.testi);
+    console.log("2");
+  console.log(this.teams);
+  console.log(this.competition_id);
     this.dataService.setData("Haloo");
   
   }
