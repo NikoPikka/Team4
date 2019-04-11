@@ -13,21 +13,21 @@
       
       <h1 padding>Top 3 Leagues</h1>
 
-<!--------------------------------------------------------------------------------------------Premier League-->
+<!--------------------------------------------------------------------------------------------LEAGUE1-->
 <!--------------------------------------------------------------Title-->
       <ion-grid class="top_grid pointer">
-        <ion-row (click)="premierLeague()">
+        <ion-row (click)="topLeague1()">
           <ion-col>
-              <img src="..\assets\img\Premier League.png" style="max-height: 70px;">
+              <img src="..\assets\img\{{league1}}.png" style="max-height: 70px;">
           </ion-col>
           <ion-col size="10">
-              <h3>PremierLeague</h3>
+              <h3>{{league1}}</h3>
           </ion-col>
         </ion-row>
 
 <!--------------------------------------------------------------Upcoming matches-->
         <ion-buttons *ngIf=top1 start>
-          <ion-button color="dark" expand="full" >   
+          <ion-button>   
               <p class="pointer" (click)="upcoming()">
                 <ion-icon class="arrow" *ngIf=upcomingOpen name="arrow-dropdown"></ion-icon>
                 <ion-icon class="arrow" *ngIf=!upcomingOpen name="arrow-dropright"></ion-icon>
@@ -47,12 +47,12 @@
             </ion-row>
             <ion-row>
               <ion-col>
-                <div>
+                <div routerLink="/team/{{match?.homeTeam?.id}}">
                   {{match?.homeTeam?.name}}
                 </div>
               </ion-col>
               <ion-col>
-                <div>
+                <div routerLink="/team/{{match?.awayTeam?.id}}">
                   {{match?.awayTeam?.name}}
                 </div>
               </ion-col>
@@ -64,7 +64,7 @@
 <!--------------------------------------------------------------Scores/Played matches-->
       <ion-grid class="bottom_grid">
         <ion-buttons *ngIf=top1 start>
-          <ion-button expand="full" >   
+          <ion-button>   
               <p class="pointer" (click)="scores()">
                 <ion-icon class="arrow" *ngIf=scoresOpen name="arrow-dropdown"></ion-icon>
                 <ion-icon class="arrow" *ngIf=!scoresOpen name="arrow-dropright"></ion-icon>
@@ -85,12 +85,12 @@
               </ion-row>
               <ion-row>
                 <ion-col>
-                  <div>
+                  <div routerLink="/team/{{match?.homeTeam?.id}}">
                     {{match?.homeTeam?.name}}
                   </div>
                 </ion-col>
                 <ion-col>
-                  <div>
+                  <div routerLink="/team/{{match?.awayTeam?.id}}">
                     {{match?.awayTeam?.name}}
                   </div>
                 </ion-col>
@@ -105,21 +105,21 @@
       </ion-grid>
 
 
-<!--------------------------------------------------------------------------------------------Serie A-->
+<!--------------------------------------------------------------------------------------------LEAGUE2-->
 <!--------------------------------------------------------------Title-->
       <ion-grid class="top_grid pointer">
-          <ion-row (click)="serieA()">
+          <ion-row (click)="topLeague2()">
             <ion-col>
-                <img src="..\assets\img\Serie A.png" style="max-height: 70px;">
+                <img src="..\assets\img\{{league2}}.png" style="max-height: 70px;">
             </ion-col>
             <ion-col size="10">
-                <h3>Serie A</h3>
+                <h3>{{league2}}</h3>
             </ion-col>
           </ion-row>
 
 <!--------------------------------------------------------------Upcoming matches-->
           <ion-buttons *ngIf=top2 start>
-            <ion-button color="dark" expand="full" >   
+            <ion-button>   
                 <p class="pointer" (click)="upcoming()">
                   <ion-icon class="arrow" *ngIf=upcomingOpen name="arrow-dropdown"></ion-icon>
                   <ion-icon class="arrow" *ngIf=!upcomingOpen name="arrow-dropright"></ion-icon>
@@ -139,12 +139,12 @@
               </ion-row>
               <ion-row>
                 <ion-col>
-                  <div>
+                  <div routerLink="/team/{{match?.homeTeam?.id}}">
                     {{match?.homeTeam?.name}}
                   </div>
                 </ion-col>
                 <ion-col>
-                  <div>
+                  <div routerLink="/team/{{match?.awayTeam?.id}}">
                     {{match?.awayTeam?.name}}
                   </div>
                 </ion-col>
@@ -156,7 +156,7 @@
 <!--------------------------------------------------------------Scores/Played matches-->
         <ion-grid class="bottom_grid">
           <ion-buttons *ngIf=top2 start>
-            <ion-button expand="full" >   
+            <ion-button>   
                 <p class="pointer" (click)="scores()">
                   <ion-icon class="arrow" *ngIf=scoresOpen name="arrow-dropdown"></ion-icon>
                   <ion-icon class="arrow" *ngIf=!scoresOpen name="arrow-dropright"></ion-icon>
@@ -177,12 +177,12 @@
                 </ion-row>
                 <ion-row>
                   <ion-col>
-                    <div>
+                    <div routerLink="/team/{{match?.homeTeam?.id}}">
                       {{match?.homeTeam?.name}}
                     </div>
                   </ion-col>
                   <ion-col>
-                    <div>
+                    <div routerLink="/team/{{match?.awayTeam?.id}}">
                       {{match?.awayTeam?.name}}
                     </div>
                   </ion-col>
@@ -196,21 +196,21 @@
             </div>
         </ion-grid>
 
-<!--------------------------------------------------------------------------------------------La League-->
+<!--------------------------------------------------------------------------------------------LEAGUE3-->
 <!--------------------------------------------------------------Title-->
         <ion-grid class="top_grid pointer">
-            <ion-row (click)="laLeague()">
+            <ion-row (click)="topLeague3()">
               <ion-col>
-                  <img src="..\assets\img\Primera Division.png" style="max-height: 70px;">
+                  <img src="..\assets\img\{{league3}}.png" style="max-height: 70px;">
               </ion-col>
               <ion-col size="10">
-                  <h3>LA League</h3>
+                  <h3>{{league3}}</h3>
               </ion-col>
             </ion-row>
 
 <!--------------------------------------------------------------Upcoming matches-->
             <ion-buttons *ngIf=top3 start>
-              <ion-button color="dark" expand="full" >   
+              <ion-button>   
                   <p class="pointer" (click)="upcoming()">
                     <ion-icon class="arrow" *ngIf=upcomingOpen name="arrow-dropdown"></ion-icon>
                     <ion-icon class="arrow" *ngIf=!upcomingOpen name="arrow-dropright"></ion-icon>
@@ -230,12 +230,12 @@
                 </ion-row>
                 <ion-row>
                   <ion-col>
-                    <div>
+                    <div routerLink="/team/{{match?.homeTeam?.id}}">
                       {{match?.homeTeam?.name}}
                     </div>
                   </ion-col>
                   <ion-col>
-                    <div>
+                    <div routerLink="/team/{{match?.awayTeam?.id}}">
                       {{match?.awayTeam?.name}}
                     </div>
                   </ion-col>
@@ -247,7 +247,7 @@
         <!--------------------------------------------------------------Scores/Played matches-->
           <ion-grid class="bottom_grid">
             <ion-buttons *ngIf=top3 start>
-              <ion-button expand="full" >   
+              <ion-button>   
                   <p class="pointer" (click)="scores()">
                     <ion-icon class="arrow" *ngIf=scoresOpen name="arrow-dropdown"></ion-icon>
                     <ion-icon class="arrow" *ngIf=!scoresOpen name="arrow-dropright"></ion-icon>
@@ -268,12 +268,12 @@
                   </ion-row>
                   <ion-row>
                     <ion-col>
-                      <div>
+                      <div routerLink="/team/{{match?.homeTeam?.id}}">
                         {{match?.homeTeam?.name}}
                       </div>
                     </ion-col>
                     <ion-col>
-                      <div>
+                      <div routerLink="/team/{{match?.awayTeam?.id}}">
                         {{match?.awayTeam?.name}}
                       </div>
                     </ion-col>
