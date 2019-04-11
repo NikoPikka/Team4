@@ -11,14 +11,18 @@ import { Router } from '@angular/router';
 export class HomePage implements OnInit {
   
   allMatches: any;
-  matches: any[];
+  matches1: any[];
   matches2: any[];
+  matches3: any[];
+
   upcomingOpen: boolean = false;
   scoresOpen: boolean = false;
 
-  top1: boolean = true;
+  top1: boolean = false;
   top2: boolean = false;
-  //top3: boolean = false;
+  top3: boolean = false;
+
+
 
 
   constructor( private footballService: FootballService, private router: Router) {
@@ -29,15 +33,33 @@ export class HomePage implements OnInit {
   }
 
   premierLeague() {
+    this.upcomingOpen = false;
+    this.scoresOpen = false;
     this.top1 = true;
     this.top2 = false;
-    if(!this.matches) {this.getData(2021);}
+    this.top3 = false;
+
+    if (!this.matches1) {this.getData(2021)};
   }
 
   serieA() {
+    this.upcomingOpen = false;
+    this.scoresOpen = false;
     this.top1 = false;
     this.top2 = true;
-    if(!this.matches2) {this.getData(2013);}
+    this.top3 = false;
+
+    if (!this.matches2) {this.getData(2013)};
+  }
+
+  laLeague() {
+    this.upcomingOpen = false;
+    this.scoresOpen = false;
+    this.top1 = false;
+    this.top2 = false;
+    this.top3 = true;
+
+    if (!this.matches3) {this.getData(2014)};
   }
 
   getData(id) {
@@ -45,8 +67,9 @@ export class HomePage implements OnInit {
     .getData('/competitions/' + id + '/matches')
     .subscribe(data => {
       this.allMatches = data as any[];
-      if(id=2021) {this.matches= this.allMatches.matches;}
-      if(id=2013) {this.matches2= this.allMatches.matches;}          
+      if(id===2021) {this.matches1= this.allMatches.matches; console.log(this.matches1)}
+      if(id===2013) {this.matches2= this.allMatches.matches; console.log(this.matches2)}
+      if(id===2014) {this.matches3= this.allMatches.matches; console.log(this.matches3)}           
     })
   }
 

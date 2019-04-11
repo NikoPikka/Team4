@@ -9,8 +9,9 @@ ion-toolbar {
     background-color: #000000;
     background-image: url('/../assets/img/bg.jpg');
     background-size: cover;
+    background-attachment: fixed;
     top: 0;
-    //padding-bottom: 100%;
+    //padding-bottom: 100px;
 }
 
 .tab-block {
@@ -19,12 +20,11 @@ ion-toolbar {
     top: 2%;
     left: 2%;
     width:96%;
-    opacity: 0.9;   
+    height: cover;
+    opacity: 0.9;
+    padding-bottom: 100px;  
 }
 
-.bottom_grid {
-    //padding-bottom: 100px;
-}
 
 .top_grid {
     border-top: #000000 solid 2px;
