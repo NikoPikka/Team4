@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FootballService } from '../football.service';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
+import { PopoverController } from '@ionic/angular';
+import { PopoverComponentComponent } from '../popover-component/popover-component.component';
+
 
 @Component({
   selector: 'app-standings-tab',
@@ -14,7 +17,7 @@ export class StandingsTabPage implements OnInit {
   competition_id: string ="2021";
 
   constructor(private footballService: FootballService, private router: Router,
-    private dataService: DataService) {
+    private dataService: DataService, public popoverController: PopoverController) {
    
    }
 
@@ -46,9 +49,16 @@ getTeams(){
         } 
       }
     })
-
-  
     
 }
 
+async popOver(ev: any) {
+  const popover = await this.popoverController.create({
+    component: PopoverComponentComponent,
+    event: ev,
+    translucent: true
+  });
+  return await popover.present();
+
+}
 }
