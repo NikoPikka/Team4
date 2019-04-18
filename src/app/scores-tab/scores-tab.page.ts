@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FootballService } from '../football.service';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 
@@ -11,35 +10,16 @@ import { DataService } from '../data.service';
 })
 export class ScoresTabPage implements OnInit {
 
-  stats = [];
-  myDate: String = new Date().toISOString();
-  competition_id: string = '2021';
-  competition: any;
+  stats: any[] = [];
+  
 
 
-  constructor(private dataService: DataService, private footballService: FootballService, private router: Router) { }
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
-    this.competition_id = this.dataService.getData();
-    this.getScores();
-  }
 
-  getScores(){
-    var x = 0;
-    this.footballService
-    .getData('/competitions/'+ this.competition_id + '/matches')
-    .subscribe(data => {
-      this.competition = data;
-      this.stats = this.competition.matches.sort((b, a) => a.utcDate <= b.utcDate ? -1 : 1);
-      for(let items of this.competition.matches){ 
-        if(items.status == "FINISHED" ){  
-        this.stats[x] = items;
-          x++;
-        }
-      }  
-        console.log(this.competition.matches);
-        
-    })
-    
-  }
+    this.stats = this.dataService.getTeamsScores();
+  } 
+
+
 }
