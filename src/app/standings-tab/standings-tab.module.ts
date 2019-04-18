@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { StandingsTabPage } from './standings-tab.page';
+import { PopoverComponentComponent } from '../popover-component/popover-component.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [StandingsTabPage]
+  entryComponents: [PopoverComponentComponent],
+  declarations: [StandingsTabPage, PopoverComponentComponent]
 })
 export class StandingsTabPageModule {}

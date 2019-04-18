@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
+import { PopoverController } from '@ionic/angular';
+import { PopoverComponentComponent } from '../popover-component/popover-component.component';
+
 
 @Component({
   selector: 'app-standings-tab',
@@ -10,7 +13,8 @@ import { DataService } from '../data.service';
 export class StandingsTabPage implements OnInit {
   teams: any[] = [];
 
-  constructor(private router: Router, private dataService: DataService) {
+
+  constructor(private router: Router, private dataService: DataService, public popoverController: PopoverController) {
    
    }
 
@@ -20,5 +24,13 @@ export class StandingsTabPage implements OnInit {
   }
   
 
+async popOver(ev: any) {
+  const popover = await this.popoverController.create({
+    component: PopoverComponentComponent,
+    event: ev,
+    translucent: true
+  });
+  return await popover.present();
 
+}
 }
