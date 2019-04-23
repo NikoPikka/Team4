@@ -8,20 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./leagues.page.scss'],
 })
 export class LeaguesPage implements OnInit {
-leagues: any;
+allLeagues: any[];
 id: string;
 
   constructor(private footballService: FootballService, private router: Router) { }
 
   ngOnInit() {
+    if (!this.allLeagues) {this.getData()};
+  }
 
+
+  getData()  {
     this.footballService
     .getData('/competitions/?plan=TIER_ONE')
     .subscribe(data => {
-      this.leagues = data;
-      console.log(this.leagues);
-      for(let competitions of this.leagues.competitions)  {
-      }
+      this.allLeagues = data as any[];
+      console.log('dataa');
       })
   }
 }
