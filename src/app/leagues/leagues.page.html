@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar color="black">
-    <ion-title class="header-title">All Leagues</ion-title>
+    <ion-title class="header-title">Football APP</ion-title>
     </ion-toolbar>
 </ion-header>
 <ion-content>
-<button *ngFor="let league of allLeagues?.competitions" routerLink="/league/{{league?.id}}/standings-tab" block routerDirection="root">
+<button *ngFor="let league of allLeagues?.competitions" routerLink="/league/{{league?.id}}/{{league?.name}}/standings-tab" block routerDirection="root">
   <img src="..\assets\img\{{league?.name}}.png">
   <p>{{league?.name}} </p>
 </button>
