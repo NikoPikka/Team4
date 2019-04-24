@@ -12,6 +12,7 @@ export class LeaguePage {
 
   competition: any;
   competition_id: string;
+  league_name: string;
 
   myDate: string = new Date().toISOString().substr(0, 10);
 
@@ -23,6 +24,7 @@ export class LeaguePage {
 
   ngOnInit() {
   this.competition_id = this.route.snapshot.paramMap.get('id');
+  this.league_name= this.route.snapshot.paramMap.get('name');
   this.pushId();
   }
 
