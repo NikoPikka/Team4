@@ -4,10 +4,12 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
-<button *ngFor="let league of allLeagues?.competitions" routerLink="/league/{{league?.id}}/standings-tab" block routerDirection="root">
-  <img src="..\assets\img\{{league?.name}}.png">
-  <p>{{league?.name}} </p>
-</button>
+<div class="leagueLogo" *ngFor="let league of allLeagues?.competitions">
+  <button routerLink="/league/{{league?.id}}/standings-tab" block routerDirection="root">
+    <img src="..\assets\img\{{league?.name}}.png">
+    <p>{{league?.name}} </p>
+  </button>
+</div>
   <br>
   <br>
   <br>
