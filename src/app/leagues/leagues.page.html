@@ -5,7 +5,7 @@
 </ion-header>
 <ion-content>
 <div class="leagueLogo" *ngFor="let league of allLeagues?.competitions">
-  <button routerLink="/league/{{league?.id}}/standings-tab" block routerDirection="root">
+  <button routerLink="/league/{{league?.id}}/{{league?.name}}/standings-tab" block routerDirection="root">
     <img src="..\assets\img\{{league?.name}}.png">
     <p>{{league?.name}} </p>
   </button>
