@@ -36,7 +36,8 @@ h1, h2, h3, h4, ion-title {
 }
 
 .logo {
-    width: 50px;
+    max-width: 50px;
+    max-height: 70px;
     padding-top: 5px;
 }
   
@@ -53,7 +54,6 @@ h1, h2, h3, h4, ion-title {
     color: #ffffff;
 }
 
-
 ion-content {
     padding-bottom: 200px;
 }
@@ -68,4 +68,10 @@ ion-router-outlet {
 
 .arrow {
     font-size: 170%;
+}
+
+.date_row {
+    background-color: #193700;
+    color: #ffffff;
+    margin-top: 10px;
 }

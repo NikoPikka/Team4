@@ -1,34 +1,28 @@
 <ion-header>
   <ion-toolbar color="black">
-    <ion-title class="header-title">{{team?.name}}</ion-title>
+      <ion-title routerLink="/leagues" class="header-title pointer">
+          <img class="logo" src="{{team?.crestUrl}}">
+          <img *ngIf="team.crestUrl === ''" class="logo" src="..\assets\img\logo.png">
+          <span class="header-title-text">{{team.name}}</span>
+      </ion-title>
+      <a class="team_url" target="_blank" href={{team?.website}}>{{team?.website}}</a>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-grid class="team-header">
-      <ion-row>
-          <ion-col>
-            <h2 class="team_title">{{team?.name}}</h2>
-            <a class="team_title" target="_blank" href={{team?.website}}>{{team?.website}}</a>
-          </ion-col>
-          <ion-col>
-            <img class="team_logo" src={{team?.crestUrl}}>
-          </ion-col>
-      </ion-row>
-    </ion-grid>
+    <div class="team-header"></div>
 
-    
       <ion-tab-bar>
     
-        <ion-tab-button (click)="scheduleTab()" [ngStyle]="schedule && {'border-color': '#f7f8f3', 'background-color': '#f7f8f3'}">
+        <ion-tab-button (click)="scheduleTab()" [ngStyle]="schedule && {'border-color': '#ffffff', 'background-color': '#ffffff'}">
           <ion-icon name="calendar"></ion-icon>
           <ion-label>Schedule</ion-label>
         </ion-tab-button>
-        <ion-tab-button (click)="scoresTab()" [ngStyle]="scores && {'border-color': '#f7f8f3', 'background-color': '#f7f8f3'}">
+        <ion-tab-button (click)="scoresTab()" [ngStyle]="scores && {'border-color': '#ffffff', 'background-color': '#ffffff'}">
           <ion-icon name="clipboard"></ion-icon>
           <ion-label>Scores</ion-label>
         </ion-tab-button>
-        <ion-tab-button (click)="rosterTab()" [ngStyle]="roster && {'border-color': '#f7f8f3', 'background-color': '#f7f8f3'}">
+        <ion-tab-button (click)="rosterTab()" [ngStyle]="roster && {'border-color': '#ffffff', 'background-color': '#ffffff'}">
           <ion-icon name="contacts"></ion-icon>
           <ion-label>Roster</ion-label>
         </ion-tab-button>
@@ -42,31 +36,24 @@
       <div class="tab-contain">
         <div class="tab-block">
 
-          <!--
-          <ion-item>
-              <ion-label>
-                <ion-icon name="calendar"> </ion-icon>
-              </ion-label>
-              <ion-datetime display-format="MMM DD, YYYY " [(ngModel)]="myDate">
-              </ion-datetime>
-          </ion-item> -->
-
           <h3 padding>Upcoming matches</h3>
 
           <div *ngFor="let match of matches" >
             <ion-grid *ngIf="match?.status=='SCHEDULED'">
-              <ion-row class="schedule_row" [ngStyle]="match?.today=='yes' && {'color': '#f44242'}">
+              <ion-row class="date_row">
+                    <ion-col>
+                      <div>
+                        {{match?.utcDate.substring(0, 10)}}
+                      </div>
+                    </ion-col>
+              </ion-row>
+              <ion-row class="schedule_row" [ngStyle]="match?.today=='yes' && {'color': '#bcc400'}">
                 <ion-col>
-                  <div>
-                    {{match?.utcDate.substring(0, 10)}}
-                  </div>
-                </ion-col>
-                <ion-col size="4.5">
                   <div>
                     {{match?.homeTeam.name}}
                   </div>
                 </ion-col>
-                <ion-col size="4.5">
+                <ion-col>
                   <div>
                     {{match?.awayTeam.name}}
                   </div>
@@ -98,23 +85,25 @@
 
           <div *ngFor="let match of matches" >
             <ion-grid *ngIf="match?.status=='FINISHED' && match?.utcDate.substring(0, 4)==year && currentYearOpen">
-              <ion-row class="scores_row" [ngStyle]="match?.today=='yes' && {'color': '#f44242'}">
-                <ion-col>
-                  <div>
-                    {{match?.utcDate.substring(5, 10)}}
-                  </div>
-                </ion-col>
-                <ion-col size="4">
+              <ion-row class="date_row">
+                  <ion-col>
+                    <div>
+                      {{match?.utcDate.substring(0, 10)}}
+                    </div>
+                  </ion-col>
+              </ion-row>                   
+              <ion-row class="scores_row" [ngStyle]="match?.today=='yes' && {'color': '#bcc400'}">
+                <ion-col size="4.5">
                   <div>
                     {{match?.homeTeam.name}}
                   </div>
                 </ion-col>
-                <ion-col>
+                <ion-col size="2.5">
                   <div>
                     {{match?.score.fullTime.homeTeam}} - {{match?.score.fullTime.awayTeam}}
                   </div>
                 </ion-col>
-                <ion-col size="4">
+                <ion-col size="4.5">
                   <div>
                     {{match?.awayTeam.name}}
                   </div>
@@ -132,23 +121,25 @@
 
           <div *ngFor="let match of matches" >
               <ion-grid *ngIf="match?.status=='FINISHED' && match?.utcDate.substring(0, 4)==(year-1) && lastYearOpen">
-                <ion-row class="scores_row" [ngStyle]="match?.today=='yes' && {'color': '#f44242'}">
-                  <ion-col>
-                    <div>
-                      {{match?.utcDate.substring(5, 10)}}
-                    </div>
-                  </ion-col>
-                  <ion-col size="4">
+                <ion-row class="date_row">
+                    <ion-col>
+                      <div>
+                        {{match?.utcDate.substring(0, 10)}}
+                      </div>
+                    </ion-col>
+                </ion-row>                
+                <ion-row class="scores_row" [ngStyle]="match?.today=='yes' && {'color': '#bcc400'}">
+                  <ion-col size="4.5">
                     <div>
                       {{match?.homeTeam.name}}
                     </div>
                   </ion-col>
-                  <ion-col>
+                  <ion-col size="2.5">
                     <div>
                       {{match?.score.fullTime.homeTeam}} - {{match?.score.fullTime.awayTeam}}
                     </div>
                   </ion-col>
-                  <ion-col size="4">
+                  <ion-col size="4.5">
                     <div>
                       {{match?.awayTeam.name}}
                     </div>
@@ -171,10 +162,42 @@
     
               <h3 padding>Roster</h3>
     
-              <div padding *ngFor="let player of players">
-                  <p>{{player.name}}</p>
-                  <p>Position: {{player.position}}</p>
+              <h4 class="player-title">Defenders</h4>
+              <div *ngFor="let player of players">
+                <div class="player-list" *ngIf="player?.position=='Defender'">
+                    <p class="player-name">{{player?.name}}</p>
+                    <p class="player-info">Nationality: {{player?.position}}</p>
+                    <p class="player-info">Birthday: {{player?.dateOfBirth}}</p>
+                </div>
               </div>
+
+              <h4 class="player-title">Midfielders</h4>
+              <div *ngFor="let player of players">
+                <div class="player-list" *ngIf="player?.position=='Midfielder'">
+                    <p class="player-name">{{player?.name}}</p>
+                    <p class="player-info">Nationality: {{player?.position}}</p>
+                    <p class="player-info">Birthday: {{player?.dateOfBirth}}</p>
+                </div>
+              </div>
+
+              <h4 class="player-title">Attackers</h4>
+              <div *ngFor="let player of players">
+                <div class="player-list" *ngIf="player?.position=='Attacker'">
+                    <p class="player-name">{{player?.name}}</p>
+                    <p class="player-info">Nationality: {{player?.position}}</p>
+                    <p class="player-info">Birthday: {{player?.dateOfBirth}}</p>
+                </div>
+              </div>
+
+              <h4 class="player-title">Goalkeepers</h4>
+              <div *ngFor="let player of players">
+                <div class="player-list" *ngIf="player?.position=='Goalkeeper'">
+                    <p class="player-name">{{player?.name}}</p>
+                    <p class="player-info">Nationality: {{player?.position}}</p>
+                    <p class="player-info">Birthday: {{player?.dateOfBirth}}</p>
+                </div>
+              </div>
+
 
             </div>
           </div>

@@ -1,55 +1,56 @@
-$bg: #ffffff;
+$white: #ffffff;
+$bgc: #ffffff;
 
 ion-content {
-    background-color: $bg;
+    background-color: $white;
 }
 
 ion-tab-button {
-    background-color: $bg;
-    //border-radius: 0px 0px 10px 10px;
+    background-color: #f7f7f7;
     border-bottom: 2px solid #000000;
-    border-top: 0.5px solid #ffffff;
+    border-top: 0.5px solid #f7f7f7;
     color: #000000;
 }
 
 .team-header {
-    background-color: #ffffff;
+    background-color: #bcc400;
     color: #000000;
-    min-height: 100px;
+    min-height: 5px;
+    border: solid #bcc400 1px;
 }
-.team_title {
-    text-align: left;
+.team_url {
     margin-top: 0;
     padding-top: 0;
     font-size: 100%;
+    cursor: pointer;
+    text-decoration:none;
+    color: #ffffff;
+    float: right;
+    padding-right: 2%;
+    opacity: 0.8;
+
 }
 
 .tab-contain {
     padding: 0;
     padding-right: 0;
     padding-left: 0;
-    background-color: #ffed00;
-    background-image: url('/../assets/img/grass.jpg');
+    //background-image: url('/../assets/img/grass.jpg');
     background-size: contain;
     background-attachment: fixed;
-    //padding-bottom: 100%;
 }
 
 .tab-block {
-    background-color: $bg;
+    background-color: $white;
     padding: 0;
     margin: 0;
-    opacity: 0.95;
     padding-bottom: 50%;
-    //padding-top:5%;
 }
 
 
 
 ion-tab-bar {
-    background-color: #f7f8f3;
-    //background-color: #ffffff;
-    //background-image: url('/../assets/img/grass.jpg');
+    background-color: $bgc;
     background-size: contain;
 }
 
@@ -66,21 +67,19 @@ ion-tab-bar {
 }
 
 .schedule_row {
-    border-bottom: 1px solid #000000;
-    background-color: #f7f8f3; 
-    min-height:50px;
+    border-bottom: 1px solid #427000;
+    background-color: $bgc; 
 }
 
 .scores_row {
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #427000;
     margin-left:2%;
 }
 
 .scores_row_title {
     border-bottom: 2px solid #000000;
-    background-color: #f7f8f3; 
+    background-color: $bgc; 
     min-height:50px;
-    //font-size: 120%;
 }
 
 h3 {
@@ -90,4 +89,32 @@ h3 {
 
 .tab-selected, .tab-has-label, .tab-has-icon, .tab-layout-icon-top, .ion-activatable, hydrated {
     min-width: 33%;
+}
+
+//Roster
+.player-list {
+    padding-left: 10px;
+}
+
+.player-title {
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    background-color: #193700;
+    color: $white; 
+}
+
+.player-name {
+    font-size: 130%;
+    text-transform: uppercase;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.player-info {
+    font-size: 80%;
+    padding: 0;
+    margin: 0;
 }
