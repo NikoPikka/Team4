@@ -6,7 +6,7 @@ ion-content {
 
 ion-tab-button {
     background-color: $bg;
-    border-radius: 0px 0px 10px 10px;
+    //border-radius: 0px 0px 10px 10px;
     border-bottom: 2px solid #000000;
     border-top: 0.5px solid #ffffff;
     color: #000000;
@@ -15,12 +15,13 @@ ion-tab-button {
 .team-header {
     background-color: #ffffff;
     color: #000000;
-    min-height: 120px;
+    min-height: 100px;
 }
 .team_title {
     text-align: left;
     margin-top: 0;
     padding-top: 0;
+    font-size: 100%;
 }
 
 .tab-contain {
@@ -57,7 +58,7 @@ ion-tab-bar {
 }
 
 .team_logo {
-    max-height: 130px;
+    max-height: 100px;
     float: right;
     position: absolute;
     top: -15%;

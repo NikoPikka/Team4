@@ -10,12 +10,19 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+
+h1, h2, h3, h4, ion-title {
+    font-family: 'Righteous', cursive;
+}
+
 .footer, .header {
     background-color: #000000;
 }
 
 .header-title {
     color: #ffffff;
+    font-size: 160%;
 }
 
 ion-content {
