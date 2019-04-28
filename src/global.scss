@@ -16,13 +16,26 @@ h1, h2, h3, h4, ion-title {
     font-family: 'Righteous', cursive;
 }
 
-.footer, .header {
-    background-color: #000000;
-}
-
 .header-title {
     color: #ffffff;
     font-size: 160%;
+}
+
+.header-title-text {
+    position: absolute;
+    top: 15px;
+    left: 65px;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+.logo {
+    width: 50px;
+    padding-top: 5px;
+}
+  
+
+.footer, .header {
+    background-color: #000000;
 }
 
 ion-content {

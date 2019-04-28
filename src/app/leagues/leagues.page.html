@@ -1,15 +1,20 @@
 <ion-header>
   <ion-toolbar color="black">
-    <ion-title class="header-title">Football APP</ion-title>
-    </ion-toolbar>
+    <ion-title class="header-title">
+      <img class="logo" src="..\assets\img\logo.png">
+      <span class="header-title-text">Football APP</span>
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
+
 <ion-content>
-<div class="leagueLogo" *ngFor="let league of allLeagues?.competitions">
-  <button routerLink="/league/{{league?.id}}/{{league?.name}}/standings-tab" block routerDirection="root">
+  <button *ngFor="let league of allLeagues?.competitions" routerLink="/league/{{league?.id}}/{{league?.name}}/standings-tab" block routerDirection="root">
     <img src="..\assets\img\{{league?.name}}.png">
-    <p>{{league?.name}} </p>
+    <p class="league_name">{{league?.name}}</p>
   </button>
-</div>
+
+  <div class="bg"></div>
+
   <br>
   <br>
   <br>
