@@ -45,6 +45,15 @@ h1, h2, h3, h4, ion-title {
     background-color: #000000;
 }
 
+.footer-button {
+    color: #ffffff;
+}
+
+.footer-button :active {
+    color: #ffffff;
+}
+
+
 ion-content {
     padding-bottom: 200px;
 }
