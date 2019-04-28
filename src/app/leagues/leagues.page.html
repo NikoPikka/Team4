@@ -8,10 +8,13 @@
 </ion-header>
 
 <ion-content>
-  <button *ngFor="let league of allLeagues?.competitions" routerLink="/league/{{league?.id}}/{{league?.name}}/standings-tab" block routerDirection="root">
-    <img src="..\assets\img\{{league?.name}}.png">
-    <p class="league_name">{{league?.name}}</p>
-  </button>
+  <div *ngFor="let league of allLeagues?.competitions" routerLink="/league/{{league?.id}}/{{league?.name}}/standings-tab" block routerDirection="root">
+    <button>
+      <img src="..\assets\img\{{league?.name}}.png"> 
+      <span class="league_name">{{league?.name}}</span>
+    </button>
+  </div>
+  
 
   <div class="bg"></div>
 

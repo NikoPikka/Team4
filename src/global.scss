@@ -10,7 +10,13 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 
-@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Play|Righteous');
+
+p, span, td, th, button, ion-label {
+    font-family: 'Play', sans-serif;
+    //letter-spacing: -0.5px;   
+}
+
 
 h1, h2, h3, h4, ion-title {
     font-family: 'Righteous', cursive;
@@ -18,7 +24,7 @@ h1, h2, h3, h4, ion-title {
 
 .header-title {
     color: #ffffff;
-    font-size: 160%;
+    font-size: 130%;
 }
 
 .header-title-text {
@@ -26,6 +32,7 @@ h1, h2, h3, h4, ion-title {
     top: 15px;
     left: 65px;
     text-shadow: 2px 2px 5px #000000;
+    color: #ffffff;
 }
 
 .logo {

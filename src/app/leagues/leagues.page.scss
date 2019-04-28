@@ -2,7 +2,55 @@ button {
   outline: 7px solid #000000;
   border: 2px solid #bcc400;
   background-color: #ffffff;
+  min-height: 20%;
+  padding-bottom: 30px;
+  position:relative;
+}
+
+button {
+  span {
+    position: absolute;
+    top: 70%;
+    left: 0%;
+    font-size: 70%;
+    text-transform: uppercase;
+    opacity: 0.9;
+    background-color: #bcc400;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 454px) {
+  button {
+    span {
+      position: absolute;
+      top: 90%;
+      left: 0%;
+      font-size: 120%;
+    }
+  }
+}
+
+button:hover {
+  span {
+    color: #000000;
+    opacity: 1;
+  }
+}
+
+button :hover {
+  opacity: 0.7;
+}
+
+
+
+img {
+  min-height: 20%;
   max-height: 30%;
+}
+
+.league_name {
+  height: 10px;
 }
 
 
@@ -12,8 +60,6 @@ button {
   height: 100%;
   position: fixed;
   top: 0;
-  //padding-top: 70px;
-  //padding-bottom: 70px;
 }
 
 //galaxy S5
@@ -36,7 +82,7 @@ button {
       margin-left: 1%;
       max-width: 31.3%;
       //max-height: 30%;
-      margin-bottom: 22%;
+      //margin-bottom: 22%;
   }
     p {
       font-size: 3vw;
@@ -62,7 +108,7 @@ button {
         margin-left: 1%;
         max-width: 31.3%;
         //max-height: 30%;
-        margin-bottom: 22%;
+        //margin-bottom: 22%;
     }
       p {
         font-size: 3vw;
@@ -89,7 +135,7 @@ button {
         margin-left: 1%;
         max-width: 31.3%;
         //max-height: 30%;
-        margin-bottom: 23%;
+        //margin-bottom: 23%;
         
     }
       p {
@@ -105,7 +151,7 @@ button {
       margin-left: 1%;
       max-width: 31.3%;
       //max-height: 30%;
-      margin-bottom: 1%;
+      //margin-bottom: 1%;
   }
     p {
       font-size: 3vw;
@@ -119,7 +165,7 @@ button {
         margin-left: 1%;
         max-width: 31.3%;
         //max-height: 30%;
-        margin-bottom: 12%;
+        //margin-bottom: 12%;
     }
       p {
         font-size: 3vw;
@@ -134,7 +180,7 @@ button {
       margin-left: 1%;
       max-width: 31.3%;
       //max-height: 30%;
-      margin-bottom: 1%;
+      //margin-bottom: 1%;
   }
     p {
       font-size: 3vw;
@@ -148,7 +194,7 @@ button {
         margin-left: 1%;
         max-width: 31.3%;
         //max-height: 30%;
-        margin-bottom: 8%;
+        //margin-bottom: 8%;
     }
       p {
         font-size: 3vw;
@@ -163,7 +209,7 @@ button {
         margin-left: 1%;
         max-width: 31.3%;
         //max-height: 30%;
-        margin-bottom: 5%;
+        //margin-bottom: 5%;
     }
     p {
       font-size: 1vw;
@@ -176,7 +222,7 @@ button {
         margin-left: 1%;
         max-width: 31.3%;
         //max-height: 30%;
-        margin-bottom: 8%;
+        //margin-bottom: 8%;
     }
     p {
       font-size: 1.5vw;
@@ -184,7 +230,7 @@ button {
   }
 
 img {
-  max-width: 85%;
+  //max-width: 85%;
 }
 
 div {
