@@ -25,9 +25,10 @@ button {
   button {
     span {
       position: absolute;
-      top: 90%;
-      left: 0%;
+      top: 85%;
+      //left: 0%;
       font-size: 120%;
+      min-height: none;
     }
   }
 }
