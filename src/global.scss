@@ -75,3 +75,13 @@ ion-router-outlet {
     color: #ffffff;
     margin-top: 10px;
 }
+
+.schedule_row {
+    border-bottom: 1px solid #427000;
+    background-color: $bgc; 
+}
+
+.scores_row {
+    border-bottom: 1px solid #427000;
+    margin-left:2%;
+}
