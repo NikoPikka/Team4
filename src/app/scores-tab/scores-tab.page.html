@@ -1,21 +1,40 @@
-
-<ion-content>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Scores</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="scores">
 
   <ion-grid>
     <ion-row>
       <ion-col>
         <div *ngFor="let team of stats" >
-          <button routerLink="/team/{{team.homeTeam.id}}" routerDirection="root">{{team.homeTeam.name}}</button>
-        </div>
-      </ion-col>
-      <ion-col>
-        <div *ngFor="let team of stats">
-          <button routerLink="/team/{{team.homeTeam.id}}" routerDirection="root">{{team.awayTeam.name}}</button>
-        </div>
-      </ion-col>
-       <ion-col>
-        <div *ngFor="let score of stats" >
-          {{score.score.fullTime.homeTeam}} - {{score.score.fullTime.awayTeam}}
+          <ion-grid >
+            <ion-row class="date_row">
+                <ion-col>
+                  <div>
+                    {{team?.utcDate.substring(0, 10)}}
+                  </div>
+                </ion-col>
+            </ion-row>                   
+            <ion-row class="scores_row">
+              <ion-col size="4.5">
+                <div routerLink="/team/{{team.homeTeam.id}}" routerDirection="root">
+                  {{team?.homeTeam.name}}
+                </div>
+              </ion-col>
+              <ion-col size="2">
+                <div>
+                  {{team?.score.fullTime.homeTeam}} - {{team?.score.fullTime.awayTeam}}
+                </div>
+              </ion-col>
+              <ion-col size="4.5">
+                <div routerLink="/team/{{team.awayTeam.id}}" routerDirection="root">
+                  {{team?.awayTeam.name}}
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
         </div>
       </ion-col>
     </ion-row>

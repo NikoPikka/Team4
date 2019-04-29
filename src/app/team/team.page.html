@@ -162,6 +162,15 @@
     
               <h3 padding>Roster</h3>
     
+              <h4 class="player-title">Goalkeepers</h4>
+              <div *ngFor="let player of players">
+                <div class="player-list" *ngIf="player?.position=='Goalkeeper'">
+                    <p class="player-name">{{player?.name}}</p>
+                    <p class="player-info">Nationality: {{player?.position}}</p>
+                    <p class="player-info">Birthday: {{player?.dateOfBirth}}</p>
+                </div>
+              </div>
+
               <h4 class="player-title">Defenders</h4>
               <div *ngFor="let player of players">
                 <div class="player-list" *ngIf="player?.position=='Defender'">
@@ -188,16 +197,6 @@
                     <p class="player-info">Birthday: {{player?.dateOfBirth}}</p>
                 </div>
               </div>
-
-              <h4 class="player-title">Goalkeepers</h4>
-              <div *ngFor="let player of players">
-                <div class="player-list" *ngIf="player?.position=='Goalkeeper'">
-                    <p class="player-name">{{player?.name}}</p>
-                    <p class="player-info">Nationality: {{player?.position}}</p>
-                    <p class="player-info">Birthday: {{player?.dateOfBirth}}</p>
-                </div>
-              </div>
-
 
             </div>
           </div>
