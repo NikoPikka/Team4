@@ -10,12 +10,13 @@ button {
 button {
   span {
     position: absolute;
-    top: 70%;
+    top: 80%;
     left: 0%;
     font-size: 70%;
     text-transform: uppercase;
     opacity: 0.9;
     background-color: #bcc400;
+    min-height:15%;
     width: 100%;
   }
 }
