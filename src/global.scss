@@ -12,6 +12,9 @@
 
 @import url('https://fonts.googleapis.com/css?family=Play|Righteous');
 
+$white: #ffffff;
+$bgc: #ffffff;
+
 p, span, td, th, button, ion-label {
     font-family: 'Play', sans-serif;
     //letter-spacing: -0.5px;   
@@ -74,4 +77,14 @@ ion-router-outlet {
     background-color: #193700;
     color: #ffffff;
     margin-top: 10px;
+}
+
+.schedule_row {
+    border-bottom: 1px solid #427000;
+    background-color: $bgc; 
+}
+
+.scores_row {
+    border-bottom: 1px solid #427000;
+    margin-left:2%;
 }
