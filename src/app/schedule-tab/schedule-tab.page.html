@@ -5,10 +5,10 @@
 </ion-header>
 <ion-content >
   
-  <ion-grid>
+  <ion-grid class="schedule">
     <ion-row>
       <ion-col>
-        <div *ngFor="let team of teams" class="cols">
+        <div *ngFor="let team of teams">
 
           <ion-grid >
             <ion-row class="date_row">
@@ -18,9 +18,9 @@
                   </div>
                 </ion-col>
             </ion-row>                   
-            <ion-row class="scores_row" [ngStyle]="match?.today=='yes' && {'color': '#bcc400'}">
+            <ion-row class="scores_row">
               <ion-col size="4.5">
-                <div routerLink="/team/{{team.homeTeam.id}}" routerDirection="root">
+                <div class="pointer" routerLink="/team/{{team.homeTeam.id}}" routerDirection="root">
                   {{team?.homeTeam.name}}
                 </div>
               </ion-col>
@@ -30,7 +30,7 @@
                 </div>
               </ion-col>
               <ion-col size="4.5">
-                <div routerLink="/team/{{team.awayTeam.id}}" routerDirection="root">
+                <div class="pointer" routerLink="/team/{{team.awayTeam.id}}" routerDirection="root">
                   {{team?.awayTeam.name}}
                 </div>
               </ion-col>

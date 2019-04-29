@@ -3,9 +3,9 @@
     <ion-title>Scores</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content class="scores">
+<ion-content>
 
-  <ion-grid>
+  <ion-grid class="scores">
     <ion-row>
       <ion-col>
         <div *ngFor="let team of stats" >
@@ -19,17 +19,17 @@
             </ion-row>                   
             <ion-row class="scores_row">
               <ion-col size="4.5">
-                <div routerLink="/team/{{team.homeTeam.id}}" routerDirection="root">
+                <div class="pointer" routerLink="/team/{{team.homeTeam.id}}" routerDirection="root">
                   {{team?.homeTeam.name}}
                 </div>
               </ion-col>
-              <ion-col size="2">
+              <ion-col size="2.5">
                 <div>
                   {{team?.score.fullTime.homeTeam}} - {{team?.score.fullTime.awayTeam}}
                 </div>
               </ion-col>
               <ion-col size="4.5">
-                <div routerLink="/team/{{team.awayTeam.id}}" routerDirection="root">
+                <div class="pointer" routerLink="/team/{{team.awayTeam.id}}" routerDirection="root">
                   {{team?.awayTeam.name}}
                 </div>
               </ion-col>
