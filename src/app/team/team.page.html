@@ -2,8 +2,8 @@
   <ion-toolbar color="black">
       <ion-title routerLink="/leagues" class="header-title pointer">
           <img class="logo" src="{{team?.crestUrl}}">
-          <img *ngIf="team.crestUrl === ''" class="logo" src="..\assets\img\logo.png">
-          <span class="header-title-text">{{team.name}}</span>
+          <img *ngIf="team?.crestUrl === ''" class="logo" src="..\assets\img\logo.png">
+          <span class="header-title-text">{{team?.name}}</span>
       </ion-title>
       <a class="team_url" target="_blank" href={{team?.website}}>{{team?.website}}</a>
   </ion-toolbar>
@@ -166,8 +166,8 @@
               <div *ngFor="let player of players">
                 <div class="player-list" *ngIf="player?.position=='Defender'">
                     <p class="player-name">{{player?.name}}</p>
-                    <p class="player-info">Nationality: {{player?.position}}</p>
-                    <p class="player-info">Birthday: {{player?.dateOfBirth}}</p>
+                    <p class="player-info">Nationality: {{player?.nationality}}</p>
+                    <p class="player-info">Age: {{player?.age}}</p>
                 </div>
               </div>
 
@@ -175,8 +175,8 @@
               <div *ngFor="let player of players">
                 <div class="player-list" *ngIf="player?.position=='Midfielder'">
                     <p class="player-name">{{player?.name}}</p>
-                    <p class="player-info">Nationality: {{player?.position}}</p>
-                    <p class="player-info">Birthday: {{player?.dateOfBirth}}</p>
+                    <p class="player-info">Nationality: {{player?.nationality}}</p>
+                    <p class="player-info">Age: {{player?.age}}</p>
                 </div>
               </div>
 
@@ -184,8 +184,8 @@
               <div *ngFor="let player of players">
                 <div class="player-list" *ngIf="player?.position=='Attacker'">
                     <p class="player-name">{{player?.name}}</p>
-                    <p class="player-info">Nationality: {{player?.position}}</p>
-                    <p class="player-info">Birthday: {{player?.dateOfBirth}}</p>
+                    <p class="player-info">Nationality: {{player?.nationality}}</p>
+                    <p class="player-info">Age: {{player?.age}}</p>
                 </div>
               </div>
 
@@ -193,8 +193,8 @@
               <div *ngFor="let player of players">
                 <div class="player-list" *ngIf="player?.position=='Goalkeeper'">
                     <p class="player-name">{{player?.name}}</p>
-                    <p class="player-info">Nationality: {{player?.position}}</p>
-                    <p class="player-info">Birthday: {{player?.dateOfBirth}}</p>
+                    <p class="player-info">Nationality: {{player?.nationality}}</p>
+                    <p class="player-info">Age: {{player?.age}}</p>
                 </div>
               </div>
 
