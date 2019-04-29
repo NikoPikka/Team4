@@ -1,3 +1,7 @@
+.pad {
+  min-heiht: 700px;
+}
+
 button {
   outline: 7px solid #000000;
   border: 2px solid #bcc400;
@@ -13,12 +17,10 @@ button {
     top: 80%;
     left: 0%;
     font-size: 70%;
-    font-weight: bold;
-    padding-top: 6%;
     text-transform: uppercase;
     opacity: 0.9;
     background-color: #bcc400;
-    min-height:20%;
+    min-height:15%;
     width: 100%;
   }
 }
@@ -27,7 +29,7 @@ button {
   button {
     span {
       position: absolute;
-      top: 85%;
+      top: 83%;
       font-size: 120%;
       min-height: none;
     }
