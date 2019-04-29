@@ -28,7 +28,8 @@ export class TeamPage implements OnInit {
   utcDate: any;
 
 
-  players: [];
+  players: any[];
+  age: number;
 
   constructor(private footballService: FootballService, private router: Router, private route: ActivatedRoute) { }
 
@@ -36,7 +37,6 @@ export class TeamPage implements OnInit {
     this.team_id = this.route.snapshot.paramMap.get('id');
     this.TeamInfo();
     this.TeamMatches();
-
   }
 
   TeamInfo() {
@@ -45,7 +45,11 @@ export class TeamPage implements OnInit {
     .subscribe(data => {
       this.team = data;
       this.players= this.team.squad;
-      console.log(this.team);
+      for (let player of this.players) { 
+        player["age"] = this.year - player.dateOfBirth.substring(0, 4);
+      }
+      console.log(this.players);
+
     })
   }
 
@@ -56,7 +60,6 @@ export class TeamPage implements OnInit {
       this.allMatches = data;
       this.matches= this.allMatches.matches.sort((a, b) => a.utcDate <= b.utcDate ? -1 : 1);
 
-      
 
     for (let match of this.matches) {   
       var mdate = match.utcDate;
@@ -69,9 +72,6 @@ export class TeamPage implements OnInit {
         this.matchToday = false;
         match["today"] = "no";
       }
-
-
-
 
     }
 
